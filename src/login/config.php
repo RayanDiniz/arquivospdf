@@ -29,7 +29,7 @@ $usuario_bd  = 'root';
 $senha_bd    = '';
 $host_db     = 'localhost';
 $charset_db  = 'UTF8';
-$conexao_pdo = null;
+/*$conexao_pdo = " ";*/
 
 // Concatenação das variáveis para detalhes da classe PDO
 $detalhes_pdo  = 'mysql:host=' . $host_db . ';';

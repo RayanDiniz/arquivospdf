@@ -10,7 +10,7 @@ session_start();
 		<title>Login</title>
 	</head>
 	<body>
-		<form action="/adivocacia/" method="post">
+		<form action="../" method="post">
 			<table>
 				<tr>
 					<td>Usuário</td>

@@ -12,7 +12,7 @@ include('../login/redirect.php');
 
         $link = $_GET['link'];    
         
-        if (!unlink( 'adivocacia/data/'.$link))
+        if (!unlink( '../../data/'.$link))
         {
           echo ("Erro ao deletar $link");
         }

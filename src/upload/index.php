@@ -15,7 +15,7 @@ include('../login/redirect.php');
     <a href="/adivocacia">Voltar ao Inicio</a>
     <h1>Upload de Arquivos</h1>
     <?php if (isset($msg) && $msg != false) echo "<p> $msg </p>"; ?>
-    <form action="/adivocacia/src/upload/upload.php" method="POST" enctype="multipart/form-data">
+    <form action="/arquivospdf/src/upload/upload.php" method="POST" enctype="multipart/form-data">
         Arquivo: <input type="file" required name="arquivo"><br>
         
         <input type='text' name='cpf' oninput="mascara(this)"><br>

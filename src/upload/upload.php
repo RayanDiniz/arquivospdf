@@ -10,8 +10,8 @@ $msg = false;
 $cpf = $_POST["cpf"];
 $titulo = $_POST["titulo"];
 $tipo = $_POST["tipo"];
-$dat = $_POST["dat"];
-
+$dat = $_POST['dat'];
+$data = "$dat";
 if (isset($_FILES['arquivo'])) {
     $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); //pega a extensao do arquivo
     if ($extensao != ".pdf") {
@@ -24,7 +24,7 @@ if (isset($_FILES['arquivo'])) {
 
         $link = $novo_nome;
 
-        $sql_code = "INSERT INTO arquivos (titulo, link, tipo, dat, id_cliente) VALUES ('$titulo', '$link', '$tipo', $dat, '$cpf')";
+        $sql_code = "INSERT INTO arquivos (titulo, link, tipo, dat, id_cliente) VALUES ('$titulo', '$link', '$tipo', $data, '$cpf')";
 
         if ($con->query($sql_code))
             $msg = "Arquivo enviado com sucesso!";
@@ -32,7 +32,7 @@ if (isset($_FILES['arquivo'])) {
         $msg = "Falha ao enviar arquivo.";
     }
 }
-echo $msg  . $dat;
+echo $msg;
 
 /*header("Refresh: 5;url= ./");*/
 die();
