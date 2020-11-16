@@ -1,13 +1,6 @@
 <?php
-// Inclui o arquivo de configuração
 include('src/login/config.php');
-
-// Inclui o arquivo de verificação de login
 include('src/login/verifica_login.php');
-
-// Se não for permitido acesso nenhum ao arquivo
-// Inclua o trecho abaixo, ele redireciona o usuário para 
-// o formulário de login
 include('src/login/redirect.php');
 ?>
 <!DOCTYPE html>
@@ -25,7 +18,7 @@ include('src/login/redirect.php');
 	para sair.<br>
     Para enviar novos arquivos <a href="src/upload">clique aqui</a>
 <?php
-if ($_SESSION['usuario'] === 'rayan') {
+if ($_SESSION['master'] === 'adm') {
 	echo '<a href="src/cria-usuarios/">Criar usuário</a>';
 };
 ?>

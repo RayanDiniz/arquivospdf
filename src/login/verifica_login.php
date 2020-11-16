@@ -39,6 +39,7 @@ if (
 		$_SESSION['nome_usuario'] = $fetch_usuario['user_name'];
 		$_SESSION['usuario']      = $fetch_usuario['user'];
 		$_SESSION['user_id']      = $fetch_usuario['user_id'];
+		$_SESSION['master']      = $fetch_usuario['master'];
 	} else {
 		// Continua deslogado
 		$_SESSION['logado']     = false;

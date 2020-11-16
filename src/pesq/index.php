@@ -34,7 +34,7 @@ if ($a == "buscar") {
     para sair.<br>
     Para enviar novos arquivos <a href="../upload">clique aqui</a>
 <?php
-if ($_SESSION['usuario'] === 'rayan') {
+if ($_SESSION['master'] === 'adm') {
 	echo '<a href="../cria-usuarios/">Criar usuário</a>';
 };
 ?>

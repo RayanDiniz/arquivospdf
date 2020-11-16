@@ -2,7 +2,7 @@
 include('../login/config.php');
 include('../login/verifica_login.php');
 include('../login/redirect.php');
-if ($_SESSION['usuario'] === 'rayan') {
+if ($_SESSION['master'] === 'adm') {
 	// Variavél para preencher o erro (se existir)
 	$erro = false;
 
