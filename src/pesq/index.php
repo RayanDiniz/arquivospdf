@@ -30,12 +30,12 @@ if ($a == "buscar") {
 
 <body>
     <p>Olá <b><?php echo $_SESSION['nome_usuario'] ?></b>,
-    <a href="/adivocacia/src/login/sair.php">clique aqui</a>
+    <a href="../../login/sair.php">clique aqui</a>
     para sair.<br>
     Para enviar novos arquivos <a href="../upload">clique aqui</a>
 <?php
 if ($_SESSION['usuario'] === 'rayan') {
-	echo '<a href="src/cria-usuarios/">Criar usuário</a>';
+	echo '<a href="../cria-usuarios/">Criar usuário</a>';
 };
 ?>
     <form name="frmBusca" method="post" action="?a=buscar">
@@ -56,14 +56,16 @@ if ($_SESSION['usuario'] === 'rayan') {
     if ($numRegistros != 0) {
         // Exibe os produtos e seus respectivos preços
         while ($arquivo = mysqli_fetch_object($sql)) {
+            $data = $arquivo->dat;
+            $data = implode("/",array_reverse(explode("-",$data)));
 ?>
         <tr>
-            <td><?php echo $arquivo->dat ?></td>
+            <td><?php echo $data ?></td>
             <td><?php echo $arquivo->titulo ?></td>
             <td><?php echo $arquivo->tipo ?></td>
             <td><?php echo $arquivo->id_cliente ?></td>
-            <td><a href="<?php echo $arquivo->link ?>" target="_blank">Ver e Baixar</a></td>
-            <td><a style="color:red;" href="del.php?del=<?php echo $arquivo->id ?>&&link=<?php echo $arquivo->link ?>">Apagar</a> </td>
+            <td><a href="../../data/<?php echo $arquivo->link ?>" target="_blank">Ver e Baixar</a></td>
+            <td><a style="color:red;" href="../../data/del.php?del=<?php echo $arquivo->id ?>&&link=<?php echo $arquivo->link ?>&&nome=<?php echo $arquivo->titulo ?>">Apagar</a> </td>
         </tr>
 <?php
         }

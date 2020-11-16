@@ -68,7 +68,7 @@ if ($_SESSION['usuario'] === 'rayan') {
 
 <body>
 	<p>Para editar, apenas digite o nome de usuário que deseja editar.</p>
-	<p><a href="../login.php">Clique aqui</a> para testar.</p>
+	<p><a href="../login.php">Clique aqui</a> para voltar a tela de login e testar.</p>
 	<form action="" method="post">
 		<table>
 			<tr>
@@ -84,7 +84,7 @@ if ($_SESSION['usuario'] === 'rayan') {
 				<td><input type="password" name="form_senha" required></td>
 			</tr>
 			<tr>
-				<td>Nome:</td>
+				<td>Nome Completo</td>
 			</tr>
 			<tr>
 				<td><input type="text" name="form_nome"></td>
@@ -131,6 +131,7 @@ if ($_SESSION['usuario'] === 'rayan') {
 <?php
 } else {
 	echo 'Você não tem acesso a essa pagina!';
+	header("Refresh: 2;url= ../../");
 }
 ?>
 </body>

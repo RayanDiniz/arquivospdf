@@ -12,16 +12,15 @@ include('../login/redirect.php');
 </head>
 
 <body>
-    <a href="/adivocacia">Voltar ao Inicio</a>
+    <a href="../../">Voltar ao Inicio</a>
     <h1>Upload de Arquivos</h1>
     <?php if (isset($msg) && $msg != false) echo "<p> $msg </p>"; ?>
-    <form action="/arquivospdf/src/upload/upload.php" method="POST" enctype="multipart/form-data">
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
         Arquivo: <input type="file" required name="arquivo"><br>
         
         <input type='text' name='cpf' oninput="mascara(this)"><br>
         <input type='text' name='titulo'><br>
         <input type='text' name='tipo'><br>
-        <input type='date' name='dat'><br>
         <input type="submit" value="Salvar">
     </form>
 	<script src="../app.js"></script>
