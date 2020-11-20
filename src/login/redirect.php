@@ -1,5 +1,5 @@
 <?php
 if ( $_SESSION['logado'] != true ) {
-	header('location: ../arquivospdf/src/login.php');
+	header('location: http://www.nuvem.space/src/login.php');
 }
 ?>
