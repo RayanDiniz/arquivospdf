@@ -68,7 +68,7 @@ if ($_SESSION['master'] === 'adm') {
 
 <body>
 	<p>Para editar, apenas digite o nome de usuário que deseja editar.</p>
-	<p><a href="../login.php">Clique aqui</a> para voltar a tela de login e testar.</p>
+	<p><a href="../login.php" target="/">Clique aqui</a> para voltar a tela de login e testar.</p>
 	<form action="" method="post">
 		<table>
 			<tr>

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscando...</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <?php
 include('../login/config.php');
@@ -19,38 +20,27 @@ $a = $_GET['a'];
 if ($a == "buscar") {
 
     // Pegamos a palavra
-    $pes_cpf = trim($_POST['cpf']);
+    $pes = trim($_POST['pes']);
 
     // Verificamos no banco de dados produtos equivalente a palavra digitada
-    $sql = mysqli_query($con, "SELECT * FROM arquivos WHERE id_cliente LIKE '%" . $pes_cpf . "%' ORDER BY id_cliente");
+    $sql = mysqli_query($con, "SELECT * FROM arquivos WHERE id_cliente or titulo LIKE '%" . $pes . "%' ORDER BY id_cliente or titulo");
 
     // Descobrimos o total de registros encontrados
     $numRegistros = mysqli_num_rows($sql);
 ?>
 
 <body>
-    <p>Olá <b><?php echo $_SESSION['nome_usuario'] ?></b>,
-    <a href="../../login/sair.php">clique aqui</a>
-    para sair.<br>
-    Para enviar novos arquivos <a href="../upload">clique aqui</a>
-<?php
-if ($_SESSION['master'] === 'adm') {
-	echo '<a href="../cria-usuarios/">Criar usuário</a>';
-};
-?>
-    <form name="frmBusca" method="post" action="?a=buscar">
-        <input type="text" name="cpf" oninput="mascara(this)"/>
-		<input type="submit" value="Buscar" />
-    </form>
-    <table border="1">
-        <tr>
-            <td>Data</td>
-            <td>Titulo do Arquivo</td>
-            <td>Tipo do Arquivo</td>
-            <td>CPF do Cliente</td>
-            <td>Ler/Download</td>
-            <td>Excluir</td>
-        </tr>
+    <table id="tabela" class="table table-hover">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Titulo do Arquivo</th>
+                <th>Tipo do Arquivo</th>
+                <th>CPF do Cliente</th>
+                <th>Ler/Download</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
 <?php
     // Se houver pelo menos um registro, exibe-o
     if ($numRegistros != 0) {
@@ -59,19 +49,24 @@ if ($_SESSION['master'] === 'adm') {
             $data = $arquivo->dat;
             $data = implode("/",array_reverse(explode("-",$data)));
 ?>
-        <tr>
-            <td><?php echo $data ?></td>
-            <td><?php echo $arquivo->titulo ?></td>
-            <td><?php echo $arquivo->tipo ?></td>
-            <td><?php echo $arquivo->id_cliente ?></td>
-            <td><a href="../../data/<?php echo $arquivo->link ?>" target="_blank">Ver e Baixar</a></td>
-            <td><a style="color:red;" href="../../data/del.php?del=<?php echo $arquivo->id ?>&&link=<?php echo $arquivo->link ?>&&nome=<?php echo $arquivo->titulo ?>">Apagar</a> </td>
-        </tr>
+        <tbody>
+            <tr>
+                <td><?php echo $data ?></td>
+                <td><?php echo $arquivo->titulo ?></td>
+                <td><?php echo $arquivo->tipo ?></td>
+                <td><?php echo $arquivo->id_cliente ?></td>
+                <td><a href="../../data/<?php echo $arquivo->link ?>" target="_blank">Ver e Baixar</a></td>
+                <td>
+                <a class="btn btn-danger" href="../../data/del.php?del=<?php echo $arquivo->id ?>&&link=<?php echo $arquivo->link ?>&&nome=<?php echo $arquivo->titulo ?>">
+                    <i class="fa fa-trash-o fa-lg"></i> Delete</a>
+                </td>
+            </tr>
+        </tbody>
 <?php
         }
         // Se não houver registros
     } else {
-        echo "Nenhum arquivo foi encontrado com o CPF: " . $pes_cpf . "";
+        echo "<div class='alert alert-danger'><strong>Atenção!</strong>Nenhum arquivo foi encontrado com: <storng>" . $pes . "</strong></div>";
     }
 }
     ?>

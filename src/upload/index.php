@@ -12,7 +12,6 @@ include('../login/redirect.php');
 </head>
 
 <body>
-    <a href="../../">Voltar ao Inicio</a>
     <h1>Upload de Arquivos</h1>
     <?php if (isset($msg) && $msg != false) echo "<p> $msg </p>"; ?>
     <form action="upload.php" method="POST" enctype="multipart/form-data">

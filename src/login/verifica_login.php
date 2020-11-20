@@ -45,7 +45,7 @@ if (
 		$_SESSION['logado']     = false;
 		
 		// Preenche o erro para o usuário
-		$_SESSION['login_erro'] = 'Usuário ou senha inválidos';
+		$_SESSION['login_erro'] = '<strong>Atenção!</strong> Usuário ou senha inválidos';
 	}
 }
 ?>

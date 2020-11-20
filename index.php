@@ -3,30 +3,144 @@ include('src/login/config.php');
 include('src/login/verifica_login.php');
 include('src/login/redirect.php');
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Sistema de busca interna</title>
+    <title>Nuvem</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sistema de armazenamento de arquivos.">
+    <meta name="author" content="Rayan Diniz">
+
+    <link rel="stylesheet" href="src/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 
 <body>
-	Olá <b><?php echo $_SESSION['nome_usuario'] ?></b>, <a href="src/login/sair.php">clique aqui</a>
-	para sair.<br>
-    Para enviar novos arquivos <a href="src/upload">clique aqui</a>
-<?php
-if ($_SESSION['master'] === 'adm') {
-	echo '<a href="src/cria-usuarios/">Criar usuário</a>';
-};
-?>
-	<form name="frmBusca" method="post" action="src/pesq/?a=buscar">
-		<input type="text" name="cpf" oninput="mascara(this)"/>
-		<input type="submit" value="Buscar" />
-	</form>
-	<script src="src/app.js"></script>
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading"> <?php echo $_SESSION['nome_usuario'] ?> </div>
+            <div class="list-group list-group-flush">
+                <a href="." class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Inicio</span>
+                </a>
+				
+                <?php if ($_SESSION['master'] === 'adm') {?>
+                                <a href="src/cria-usuarios/" target="Post" class="list-group-item list-group-item-action bg-light">
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                    <span>Criar/Editar Usuario</span>
+                                </a>
+                <?php	}; ?>
+
+                <a href="src/upload" target="Post" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-file-upload" aria-hidden="true"></i>
+                    <span>Enviar Arquivo</span>
+				</a>
+
+                <a href="https://www.ilovepdf.com/pt/word_para_pdf" target="Post" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-sync" aria-hidden="true"></i>
+                    <span>Converter Arquivo</span>
+                </a>
+                
+                <a href="src/login/sair.php" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <a href="#" id="menu-toggle">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                    <ul class="navbar-nav ml-auto">
+                            
+                        <li class="nav-item">
+
+                            <form name="frmBusca" method="post" target="Post" action="src/pesq/?a=buscar">
+                                <div class="input-group">
+                                    <input name="pes" id="txt_consulta" placeholder="Buscar pelo CPF" type="text" oninput="mascara(this)"
+                                        class="form-control">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </li>
+                        <li class="nav-item">
+                            &nbsp;&nbsp;ou&nbsp;&nbsp;
+                        </li>
+                        <li class="nav-item">
+
+                            <form name="frmBusca" method="post" target="Post" action="src/pesq/?a=buscar">
+                                <div class="input-group">
+                                    <input name="pes" id="txt_consulta" placeholder="Buscar pelo Nome" type="text" class="form-control">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="submit">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid"    style="height:80%;">
+                <h3 class="mt-4"><b><?php echo $_SESSION['nome_usuario'] ?></b></h3>
+
+                <iframe name="Post" src="info.html" width="100%" height="100%" frameborder=0 scrolling=yes>
+
+                </iframe>
+            </div>
+			<div class=" text-center text-muted" style="margin-bottom:0">
+				<p>RayanDiniz &copy;</p>
+			</div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="src/app.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
 </body>
 
 </html>
