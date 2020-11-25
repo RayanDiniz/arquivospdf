@@ -20,7 +20,16 @@ include('../login/redirect.php');
     <h1>Upload de Arquivos</h1>
     <?php if (isset($msg) && $msg != false) echo "<p> $msg </p>"; ?>
     <form action="upload.php" method="POST" enctype="multipart/form-data">
-        Arquivo: <input type="file" required name="arquivo"><br>
+        <select class="form-control" name="cpf" id="sel1">
+<?php
+        $sql = mysqli_query($conexao_pdo, "SELECT * FROM clientes WHERE cpf ORDER BY nome");
+        while ($clientes = mysqli_fetch_object($sql)) {
+
+        echo '<option>'.$clientes->cpf.' - '.$clientes->nome.'</option>';
+        }
+?>
+        </select>
+        Arquivo: <input type="file" class="form-control" required name="arquivo"><br>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-file    "></i></span>

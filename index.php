@@ -142,7 +142,7 @@ include('src/login/redirect.php');
                 </iframe>
             </div>
 			<div class=" text-center text-muted" style="margin-bottom:0">
-				<p>RayanDiniz &copy;</p>
+				<p>RD Software &copy;</p>
 			</div>
         </div>
     </div>
