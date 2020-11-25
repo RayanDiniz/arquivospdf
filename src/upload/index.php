@@ -29,7 +29,7 @@ include('../login/redirect.php');
             <input type="text" name="tipo" class="form-control" placeholder="Tipo do Arquivo">
         </div>
         <input type="text" name="cpf" class="form-control" oninput="mascara(this)"><br>
-        <button type="button" type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
       
     <!-- Optional JavaScript -->
