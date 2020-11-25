@@ -47,4 +47,10 @@ try {
     // Mata o script
     die();
 }
+
+
+$con = @mysqli_connect($host_db, $usuario_bd, $senha_bd) or die("Não foi possível a conexão com o Banco");
+
+// Selecionando banco
+$db = @mysqli_select_db($con, $base_dados) or die("Não foi possível selecionar o Banco");
 ?>
