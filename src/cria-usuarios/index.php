@@ -1,8 +1,8 @@
 <?php
-include('../login/config.php');
-include('../login/verifica_login.php');
-include('../login/redirect.php');
-if ($_SESSION['master'] === 'adm') {
+//include('../login/config.php');
+//include('../login/verifica_login.php');
+//include('../login/redirect.php');
+//if ($_SESSION['master'] === 'adm') {
 	// Variavél para preencher o erro (se existir)
 	$erro = false;
 
@@ -129,10 +129,10 @@ if ($_SESSION['master'] === 'adm') {
 		?>
 	</table>
 <?php
-} else {
+//} else {
 	echo 'Você não tem acesso a essa pagina!';
 	header("Refresh: 2;url= ../../");
-}
+//}
 ?>
 </body>
 
