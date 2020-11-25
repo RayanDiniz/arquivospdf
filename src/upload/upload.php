@@ -26,7 +26,7 @@ if (isset($_FILES['arquivo'])) {
 
         $link = $novo_nome;
 
-        $sql_code = "INSERT INTO arquivos (titulo, link, tipo, dat, id_cliente) VALUES ('$titulo', '$link', '$tipo', '$data', '$cpf')";
+        $sql_code = "INSERT INTO arquivos ('titulo', 'link', 'tipo', 'data', 'id_cliente') VALUES ('$titulo', '$link', '$tipo', '$data', '$cpf')";
 
         if ($con->query($sql_code))
             $msg = "Arquivo enviado com sucesso!";
