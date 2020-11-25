@@ -20,7 +20,7 @@ if (
   ! empty ( $dados_usuario['senha'] ) 
 ) {
 	// Faz a consulta do nome de usuário na base de dados
-	$pdo_checa_user = $conexao_pdo->prepare('SELECT * FROM usuarios WHERE user = ? LIMIT 1');
+	$pdo_checa_user = $conexao_pdo->prepare('SELECT * FROM usuarios WHERE usuario = ? LIMIT 1');
 	$verifica_pdo = $pdo_checa_user->execute( array( $dados_usuario['usuario'] ) );
 	
 	// Verifica se a consulta foi realizada com sucesso
@@ -33,12 +33,12 @@ if (
 	$fetch_usuario = $pdo_checa_user->fetch();
 	
 	// Verifica se a senha do usuário está correta
-	if ( crypt( $dados_usuario['senha'], $fetch_usuario['user_password'] ) === $fetch_usuario['user_password'] ) {
+	if ( crypt( $dados_usuario['senha'], $fetch_usuario['senha'] ) === $fetch_usuario['senha'] ) {
 		// O usuário está logado
 		$_SESSION['logado']       = true;
-		$_SESSION['nome_usuario'] = $fetch_usuario['user_name'];
-		$_SESSION['usuario']      = $fetch_usuario['user'];
-		$_SESSION['user_id']      = $fetch_usuario['user_id'];
+		$_SESSION['nome_usuario'] = $fetch_usuario['nome'];
+		$_SESSION['usuario']      = $fetch_usuario['usuario'];
+		$_SESSION['user_id']      = $fetch_usuario['id'];
 		$_SESSION['master']      = $fetch_usuario['master'];
 	} else {
 		// Continua deslogado
