@@ -1,7 +1,7 @@
 <?php
-$user = "root";
-$password = "";
-$database = "test";
+$user = "u267435245_Adb";
+$password = "Lambchgoyw123";
+$database = "u267435245_db";
 $hostname = "localhost";
 
 $con = @mysqli_connect($hostname, $user, $password) or die("Não foi possível a conexão com o Banco");

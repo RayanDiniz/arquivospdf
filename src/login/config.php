@@ -24,9 +24,9 @@ $_SESSION['login_erro'] = false;
  */
  
 // Variáveis da conexão
-$base_dados  = 'test';
-$usuario_bd  = 'root';
-$senha_bd    = '';
+$base_dados  = 'u267435245_db';
+$usuario_bd  = 'u267435245_Adb';
+$senha_bd    = 'Lambchgoyw123';
 $host_db     = 'localhost';
 $charset_db  = 'UTF8';
 /*$conexao_pdo = " ";*/

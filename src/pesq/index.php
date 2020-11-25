@@ -23,7 +23,7 @@ if ($a == "buscar") {
     $pes = trim($_POST['pes']);
 
     // Verificamos no banco de dados produtos equivalente a palavra digitada
-    $sql = mysqli_query($con, "SELECT * FROM arquivos WHERE id_cliente or titulo LIKE '%" . $pes . "%' ORDER BY id_cliente or titulo");
+    $sql = mysqli_query($conexao_pdo, "SELECT * FROM arquivos WHERE id_cliente or titulo LIKE '%" . $pes . "%' ORDER BY id_cliente or titulo");
 
     // Descobrimos o total de registros encontrados
     $numRegistros = mysqli_num_rows($sql);
