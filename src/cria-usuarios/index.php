@@ -9,7 +9,7 @@
 	// Apaga usuários
 	if (isset($_GET['del'])) {
 		// Delete de cara (sem confirmação)
-		$pdo_insere = $conexao_pdo->prepare('DELETE FROM usuarios WHERE user_id=?');
+		$pdo_insere = $conexao_pdo->prepare('DELETE FROM usuarios WHERE id=?');
 		$pdo_insere->execute(array((int)$_GET['del']));
 
 		// Redireciona para o index.php
@@ -35,23 +35,23 @@
 		}
 
 		// Verifica se o usuário existe
-		$pdo_verifica = $conexao_pdo->prepare('SELECT * FROM usuarios WHERE user = ?');
+		$pdo_verifica = $conexao_pdo->prepare('SELECT * FROM usuarios WHERE usuario = ?');
 		$pdo_verifica->execute(array($form_usuario));
 
 		// Captura os dados da linha
 		$user_id = $pdo_verifica->fetch();
-		$user_id = $user_id['user_id'];
+		$user_id = $user_id['id'];
 
 		// Verifica se tem algum erro
 		if (!$erro) {
 			// Se o usuário existir, atualiza
 			if (!empty($user_id)) {
-				$pdo_insere = $conexao_pdo->prepare('UPDATE usuarios SET user=?, user_password=?, user_name=? WHERE user_id=?');
+				$pdo_insere = $conexao_pdo->prepare('UPDATE usuarios SET usuario=?, senha=?, nome=? WHERE id=?');
 				$pdo_insere->execute(array($form_usuario,  crypt($form_senha), $form_nome, $user_id));
 
 				// Se o usuário não existir, cadastra novo
 			} else {
-				$pdo_insere = $conexao_pdo->prepare('INSERT INTO usuarios (user, user_password, user_name) VALUES (?, ?, ?)');
+				$pdo_insere = $conexao_pdo->prepare('INSERT INTO usuarios (usuario, senha, nome) VALUES (?, ?, ?)');
 				$pdo_insere->execute(array($form_usuario, crypt($form_senha), $form_nome));
 			}
 		}
@@ -104,7 +104,7 @@
 
 	<?php
 	// Mostra os usuários
-	$pdo_verifica = $conexao_pdo->prepare('SELECT * FROM usuarios ORDER BY user_id DESC');
+	$pdo_verifica = $conexao_pdo->prepare('SELECT * FROM usuarios ORDER BY id DESC');
 	$pdo_verifica->execute();
 	?>
 
@@ -119,11 +119,11 @@
 		<?php
 		while ($fetch = $pdo_verifica->fetch()) {
 			echo '<tr>';
-			echo '<td>' . $fetch['user_id'] . '</td>';
-			echo '<td>' . $fetch['user_name'] . '</td>';
-			echo '<td>' . $fetch['user'] . '</td>';
-			echo '<td>' . $fetch['user_password'] . '</td>';
-			echo '<td> <a style="color:red;" href="?del=' . $fetch['user_id'] . '">Apagar</a> </td>';
+			echo '<td>' . $fetch['id'] . '</td>';
+			echo '<td>' . $fetch['nome'] . '</td>';
+			echo '<td>' . $fetch['usuario'] . '</td>';
+			echo '<td>' . $fetch['senha'] . '</td>';
+			echo '<td> <a style="color:red;" href="?del=' . $fetch['id'] . '">Apagar</a> </td>';
 			echo '</tr>';
 		}
 		?>
