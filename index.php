@@ -78,10 +78,13 @@ include('src/login/redirect.php');
                     <ul class="navbar-nav ml-auto">
                             
                         <li class="nav-item">
+                            Buscar:&nbsp;&nbsp;
+                        </li>     
+                        <li class="nav-item">
 
-                            <form name="frmBusca" method="post" target="Post" action="src/pesq/?a=buscar">
+                            <form name="frmBusca" method="post" target="Post" action="src/pesquisa/cliente.php?a=buscar">
                                 <div class="input-group">
-                                    <input name="pes" id="txt_consulta" placeholder="Buscar pelo CPF" type="text" oninput="mascara(this)"
+                                    <input name="cliente" id="txt_consulta" placeholder="pelo nome do cliente" type="text"
                                         class="form-control">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="submit">
@@ -94,14 +97,32 @@ include('src/login/redirect.php');
                         </li>
                         <li class="nav-item">
                             &nbsp;&nbsp;ou&nbsp;&nbsp;
-                        </li>
+                        </li>     
                         <li class="nav-item">
 
-                            <form name="frmBusca" method="post" target="Post" action="src/pesq/?a=buscar">
+                            <form name="frmBusca" method="post" target="Post" action="src/pesquisa/cliente.php?a=buscar">
                                 <div class="input-group">
-                                    <input name="pes" id="txt_consulta" placeholder="Buscar pelo Nome" type="text" class="form-control">
+                                    <input name="cpf" id="txt_consulta" placeholder="pelo CPF do cliente" type="text" oninput="mascara(this)"
+                                        class="form-control">
                                     <div class="input-group-append">
                                         <button class="btn btn-success" type="submit">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </li>
+                        <li class="nav-item">
+                            &nbsp;&nbsp;ou&nbsp;&nbsp;
+                        </li>   
+                        <li class="nav-item">
+
+                            <form name="frmBusca" method="post" target="Post" action="src/pesquisa/arquivo.php?a=buscar">
+                                <div class="input-group">
+                                    <input name="arquivo" id="txt_consulta" placeholder="pelo nome do arquivo" type="text" class="form-control">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-danger" type="submit">
                                             <i class="fas fa-search" aria-hidden="true"></i>
                                         </button>
                                     </div>

@@ -118,12 +118,16 @@ if ($_SESSION['master'] === 'adm') {
 		</tr>
 		<?php
 		while ($fetch = $pdo_verifica->fetch()) {
+			$id_user==$fetch['id'];
+			
 			echo '<tr>';
-			echo '<td>' . $fetch['id'] . '</td>';
+			echo '<td>' . $id_user . '</td>';
 			echo '<td>' . $fetch['nome'] . '</td>';
 			echo '<td>' . $fetch['usuario'] . '</td>';
 			echo '<td>' . $fetch['senha'] . '</td>';
-			echo '<td> <a style="color:red;" href="?del=' . $fetch['id'] . '">Apagar</a> </td>';
+			if($id_use!=1){
+			echo '<td> <a style="color:red;" href="?del=' . $fetch['id'] . '">Apagar</a> </td>';	
+			}else{echo '<td>Não Apagar Adm</td>';};
 			echo '</tr>';
 		}
 		?>

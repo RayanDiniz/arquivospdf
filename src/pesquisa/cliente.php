@@ -11,7 +11,6 @@
 include('../login/config.php');
 include('../login/verifica_login.php');
 include('../login/redirect.php');
-include('../conect.php');
 
 // Recuperamos a ação enviada pelo formulário
 $a = $_GET['a'];
@@ -20,10 +19,18 @@ $a = $_GET['a'];
 if ($a == "buscar") {
 
     // Pegamos a palavra
-    $pes = trim($_POST['pes']);
+    $cliente = trim($_POST['cliente']);
+    $cpf = trim($_POST['cpf']);
 
     // Verificamos no banco de dados produtos equivalente a palavra digitada
-    $sql = mysqli_query($conexao_pdo, "SELECT * FROM arquivos WHERE id_cliente or titulo LIKE '%" . $pes . "%' ORDER BY id_cliente or titulo");
+    if($cliente!=null){
+        $pes=$cliente;
+        $sql = mysqli_query($conexao_pdo, "SELECT * FROM clientes WHERE nome LIKE '%" . $pes . "%' ORDER BY nome");
+    }
+    if($cpf!=null){
+        $pes=$cpf;
+        $sql = mysqli_query($conexao_pdo, "SELECT * FROM clientes WHERE cpf LIKE '%" . $pes . "%' ORDER BY nome");
+    }
 
     // Descobrimos o total de registros encontrados
     $numRegistros = mysqli_num_rows($sql);
