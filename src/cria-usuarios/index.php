@@ -131,7 +131,7 @@ include('../login/verifica_login.php');
 <?php
 //} else {
 	echo 'Você não tem acesso a essa pagina!';
-	header("Refresh: 2;url= ../../");
+//	header("Refresh: 2;url= ../../");
 //}
 ?>
 </body>
