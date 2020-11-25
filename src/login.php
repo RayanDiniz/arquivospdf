@@ -30,6 +30,7 @@ session_start();
 		<div class="row justify-content-center align-items-center">
 			<div class="col-sm-5">
 				<div class="text-center"	style="color: #00BFFF;">
+					<i class="fas fa-angle-double-right fa-5x  "></i>
 					<i class="fa fa-cloud fa-5x" aria-hidden="true"></i>
 				</div><br/>
 				<form action="../" method="post"">
