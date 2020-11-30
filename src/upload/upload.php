@@ -7,8 +7,13 @@ include('../login/redirect.php');
 $msg = false;
 
 $cpf = $_POST['cpf_cliente'];
-//$cpf_sql = ("SELECT * FROM clientes WHERE cpf LIKE '%" . $cpf . "%'");
-//$cpf_cliente = mysqli_fetch_object($cpf_sql);
+$cpf = str_replace(".", "", $cpf);
+//Troca o traço por nada
+$cpf = str_replace("-", "", $cpf);
+//Troca o espaço por nada
+$cpf = str_replace(" ", "", $cpf);
+//Troca a barra por nada
+$cpf = str_replace("-", "", $cpf);
 
 $titulo = $_POST["titulo"];
 $tipo = $_POST["tipo"];
@@ -26,11 +31,11 @@ if (isset($_FILES['arquivo'])) {
 
         $sql_code = "INSERT INTO arquivos (titulo, link, tipo, cpf_cliente, dat)
         VALUES (
-            '{$titulo}',
-            '{$link}',
-            '{$tipo}',
-            {$cpf}, 
-            {$data}
+            '$titulo',
+            '$link',
+            '$tipo',
+            $cpf, 
+            $data
         )";
 
         if ($conexao_pdo->query($sql_code)){
