@@ -38,6 +38,6 @@ if (isset($_FILES['arquivo'])) {
 }
 echo $msg;
 echo $cpf;
-//header("Refresh: 2;url= ./");
+header("Refresh: 2;url= ./");
 die();
 ?>
