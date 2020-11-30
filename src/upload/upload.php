@@ -27,7 +27,7 @@ if (isset($_FILES['arquivo'])) {
         $sql_code = "INSERT INTO arquivos (titulo, link, tipo, cpf_cliente, data) VALUES ('$titulo', '$link', '$tipo', '$cpf', '$data')";
 
         if ($con->query($sql_code)){
-            move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $novo_nome); //efetua o upload
+            move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $link); //efetua o upload
             $msg = "Arquivo enviado com sucesso!";
         }else{
             $msg = "Falha ao enviar arquivo.";
