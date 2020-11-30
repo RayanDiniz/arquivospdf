@@ -1,5 +1,5 @@
 <?php
-include('../login/config.php');
+include('http://nuvem.space/src/login/config.php');
 //include('../login/local.php');
 include('../login/verifica_login.php');
 include('../login/redirect.php');
@@ -21,16 +21,13 @@ if (isset($_FILES['arquivo'])) {
     if ($extensao != ".pdf") {
         $msg = "Por favor, Envie o arquivo em formato PDF. Seu arquivo  esta no formato" . $extensao;
     }else{
-        $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
+        $link = md5(time()) . $extensao; //define o nome do arquivo
         $diretorio = "../../data/"; //define o diretorio para onde enviaremos o arquivo
-
-        move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $novo_nome); //efetua o upload
-
-        $link = $novo_nome;
 
         $sql_code = "INSERT INTO arquivos (titulo, link, tipo, cpf_cliente, data) VALUES ('$titulo', '$link', '$tipo', '$cpf', '$data')";
 
         if ($con->query($sql_code))
+            move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $novo_nome); //efetua o upload
             $msg = "Arquivo enviado com sucesso!";
         else
         $msg = "Falha ao enviar arquivo.";
