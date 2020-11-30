@@ -6,7 +6,7 @@ include('../login/redirect.php');
 
 $msg = false;
 
-$cpf = $_POST["cpf_cliente"];
+$cpf = $_POST['cpf_cliente'];
 //$cpf_sql = ("SELECT * FROM clientes WHERE cpf LIKE '%" . $cpf . "%'");
 //$cpf_cliente = mysqli_fetch_object($cpf_sql);
 
@@ -24,7 +24,14 @@ if (isset($_FILES['arquivo'])) {
         $link = md5(time()) . $extensao; //define o nome do arquivo
         $diretorio = "../../data/"; //define o diretorio para onde enviaremos o arquivo
 
-        $sql_code = "INSERT INTO arquivos (titulo, link, tipo, cpf_cliente, data) VALUES ('{$titulo}', '{$link}', '{$tipo}', {$cpf}, {$data})";
+        $sql_code = "INSERT INTO arquivos (titulo, link, tipo, cpf_cliente, dat)
+        VALUES (
+            '{$titulo}',
+            '{$link}',
+            '{$tipo}',
+            {$cpf}, 
+            {$data}
+        )";
 
         if ($conexao_pdo->query($sql_code)){
             move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $link); //efetua o upload
