@@ -18,8 +18,7 @@ $cpf = str_replace("-", "", $cpf);
 $titulo = $_POST['titulo'];
 $tipo = $_POST['tipo'];
 
-$dia = date('d')-1;
-$data = date('Y-m')."-$dia";
+$data = date('Y-m-d');
 
 if (isset($_FILES['arquivo'])) {
     $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); //pega a extensao do arquivo
