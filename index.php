@@ -44,7 +44,7 @@ include('src/login/redirect.php');
                 <?php if ($_SESSION['master'] === 'adm') {?>
                                 <a href="src/cria-usuarios/" target="Post" class="list-group-item list-group-item-action bg-light">
                                     <i class="fas fa-user-tie" aria-hidden="true"></i>
-                                    <span>Usuários</span>
+                                    <span>Usuários do Sistema</span>
                                 </a>
                 <?php	}; ?>
 
