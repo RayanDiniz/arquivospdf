@@ -15,8 +15,8 @@ $cpf = str_replace(" ", "", $cpf);
 //Troca a barra por nada
 $cpf = str_replace("-", "", $cpf);
 
-$titulo = $_POST["titulo"];
-$tipo = $_POST["tipo"];
+$titulo = $_POST['titulo'];
+$tipo = $_POST['tipo'];
 
 $dia = date('d')-1;
 $data = date('Y-m')."-$dia";
@@ -31,11 +31,11 @@ if (isset($_FILES['arquivo'])) {
 
         $sql_code = "INSERT INTO arquivos (titulo, link, dat, tipo, cpf_cliente)
         VALUES (
-            $titulo,
-            $link,
-            $data,
-            $tipo,
-            $cpf, 
+            {'$titulo'},
+            {'$link'},
+            {$data},
+            {'$tipo'},
+            {$cpf}, 
         )";
 
         if ($conexao_pdo->query($sql_code)){
@@ -48,6 +48,7 @@ if (isset($_FILES['arquivo'])) {
 }
 echo $msg;
 echo $cpf;
+echo $data;
 header("Refresh: 2;url= ./");
 die();
 ?>
