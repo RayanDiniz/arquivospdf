@@ -20,51 +20,60 @@ $a = $_GET['a'];
 if ($a == "buscar") {
 
     // Pegamos a palavra
-    $pes = trim($_POST['cliente']);
-    // Verificamos no banco de dados produtos equivalente a palavra digitada
+    $pes = trim($_GET['cli']);
 
-    $sql = mysqli_query($con, "SELECT * FROM clientes WHERE nome LIKE '%" . $pes . "%' ORDER BY nome");
+    // Verificamos no banco de dados produtos equivalente a palavra digitada
+    $sql = mysqli_query($con, "SELECT * FROM arquivos WHERE cpf_cliente LIKE '%" . $pes . "%' ORDER BY titulo");
 
     // Descobrimos o total de registros encontrados
     $numRegistros = mysqli_num_rows($sql);
-
 ?>
+
     <body>
         <div class="alert alert-info">
-            <strong>Info!</strong> Você pesquisou por:"<i><?php echo $pes; ?>"</i>.
+            <strong>Info!</strong> Abaixo estão os arquivos do cliente de CPF: <i>"<?php echo $pes; ?>"</i>.
         </div>
         <table id="tabela" class="table table-hover">
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Ver</th>
+                    <th>Data</th>
+                    <th>Titulo do Arquivo</th>
+                    <th>Tipo do Arquivo</th>
+                    <th>CPF do Cliente</th>
+                    <th>Ler/Download</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <?php
             // Se houver pelo menos um registro, exibe-o
             if ($numRegistros != 0) {
                 // Exibe os produtos e seus respectivos preços
-                while ($clientes = mysqli_fetch_object($sql)) {
+                while ($arquivo = mysqli_fetch_object($sql)) {
+                    $data = $arquivo->data;
+                    $data = implode("/", array_reverse(explode("-", $data)));
             ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $clientes->nome ?></td>
-                            <td><?php echo $clientes->cpf ?></td>
+                            <td><?php echo $data ?></td>
+                            <td><?php echo $arquivo->titulo ?></td>
+                            <td><?php echo $arquivo->tipo ?></td>
+                            <td><?php echo $arquivo->cpf_cliente ?></td>
+                            <td><a href="../../data/<?php echo $arquivo->link ?>">Ver e Baixar</a></td>
                             <td>
-                                <a href="arquivo_cli.php?a=buscar&cli=<?php echo $clientes->cpf?>">Ver Arquivos</a>
+                                <a class="btn btn-danger" href="../../del.php?del=<?php echo $arquivo->id ?>&&link=<?php echo $arquivo->link ?>&&nome=<?php echo $arquivo->titulo ?>">
+                                    <i class="fa fa-trash-o fa-lg"></i> Delete</a>
                             </td>
                         </tr>
                     </tbody>
-        <?php
+                <?php
                 }
-                // Se não houver registros
-            } else {
-                echo "<div class='alert alert-danger'><strong>Atenção!</strong>Nenhum arquivo foi encontrado com: <storng>" . $pes . "</strong></div>";
-            }
+            } else {    ?>
+                <div class='alert alert-danger'><strong>Atenção!</strong> Nenhum arqivo foi encontrado com: <i>"<?php echo $pes ?>"</i></div>
+        <?php }
         }
         ?>
         </table>
         <script src="../app.js"></script>
     </body>
+
 </html>

@@ -20,15 +20,25 @@ $a = $_GET['a'];
 if ($a == "buscar") {
 
     // Pegamos a palavra
-    $pes = trim($_POST['cliente']);
+    $cpf = trim($_POST['cpf']);
     // Verificamos no banco de dados produtos equivalente a palavra digitada
 
-    $sql = mysqli_query($con, "SELECT * FROM clientes WHERE nome LIKE '%" . $pes . "%' ORDER BY nome");
+    //Primeiro retira os espaços do começo e do final.
+    //Substitui o ponto por nada
+    $cpf = str_replace(".", "", $cpf);
+    //Troca o traço por nada
+    $cpf = str_replace("-", "", $cpf);
+    //Troca o espaço por nada
+    $cpf = str_replace(" ", "", $cpf);
+    //Troca a barra por nada
+    $cpf = str_replace("-", "", $cpf);
+    $pes = $cpf;
+    $sql = mysqli_query($con, "SELECT * FROM clientes WHERE cpf LIKE '%" . $pes . "%' ORDER BY cpf");
 
     // Descobrimos o total de registros encontrados
     $numRegistros = mysqli_num_rows($sql);
-
 ?>
+
     <body>
         <div class="alert alert-info">
             <strong>Info!</strong> Você pesquisou por:"<i><?php echo $pes; ?>"</i>.
@@ -56,15 +66,15 @@ if ($a == "buscar") {
                             </td>
                         </tr>
                     </tbody>
-        <?php
+                <?php
                 }
-                // Se não houver registros
-            } else {
-                echo "<div class='alert alert-danger'><strong>Atenção!</strong>Nenhum arquivo foi encontrado com: <storng>" . $pes . "</strong></div>";
-            }
+            } else { ?>
+                <div class='alert alert-danger'><strong>Atenção!</strong> Nenhum cliente foi encontrado com: <i>"<?php echo $pes ?>"</i></div>
+        <?php }
         }
         ?>
         </table>
         <script src="../app.js"></script>
     </body>
+
 </html>

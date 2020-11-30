@@ -1,13 +1,14 @@
 <?php
 include('../login/config.php');
+//include('../login/local.php');
 include('../login/verifica_login.php');
 include('../login/redirect.php');
 
-include("../conect.php");
-
 $msg = false;
+$cpf = $_POST["cpf_cliente"];
+//$cpf_sql = ("SELECT * FROM clientes WHERE cpf LIKE '%" . $cpf . "%'");
+//$cpf_cliente = mysqli_fetch_object($cpf_sql);
 
-$cpf = $_POST["cpf"];
 $titulo = $_POST["titulo"];
 $tipo = $_POST["tipo"];
 
@@ -26,7 +27,7 @@ if (isset($_FILES['arquivo'])) {
 
         $link = $novo_nome;
 
-        $sql_code = "INSERT INTO arquivos ('titulo', 'link', 'tipo', 'data', 'id_cliente') VALUES ('$titulo', '$link', '$tipo', '$data', '$cpf')";
+        $sql_code = "INSERT INTO arquivos (titulo, link, tipo, cpf_cliente, data) VALUES ('$titulo', '$link', '$tipo', $cpf, '$data')";
 
         if ($con->query($sql_code))
             $msg = "Arquivo enviado com sucesso!";
@@ -35,7 +36,7 @@ if (isset($_FILES['arquivo'])) {
     }
 }
 echo $msg;
-
-header("Refresh: 2;url= ./");
+echo $cpf;
+//header("Refresh: 2;url= ./");
 die();
 ?>

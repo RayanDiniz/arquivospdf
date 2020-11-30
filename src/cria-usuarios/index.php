@@ -1,5 +1,6 @@
 <?php
 include('../login/config.php');
+//include('../login/local.php');
 include('../login/verifica_login.php');
 include('../login/redirect.php');
 if ($_SESSION['master'] === 'adm') {
@@ -118,14 +119,15 @@ if ($_SESSION['master'] === 'adm') {
 		</tr>
 		<?php
 		while ($fetch = $pdo_verifica->fetch()) {
-			$id_user==$fetch['id'];
+			$id_user = $fetch['id'];
+			$master = $fetch['master'];
 			
 			echo '<tr>';
 			echo '<td>' . $id_user . '</td>';
 			echo '<td>' . $fetch['nome'] . '</td>';
 			echo '<td>' . $fetch['usuario'] . '</td>';
 			echo '<td>' . $fetch['senha'] . '</td>';
-			if($id_use!=1){
+			if($master != 'adm'){ 	
 			echo '<td> <a style="color:red;" href="?del=' . $fetch['id'] . '">Apagar</a> </td>';	
 			}else{echo '<td>Não Apagar Adm</td>';};
 			echo '</tr>';

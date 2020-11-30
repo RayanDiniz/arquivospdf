@@ -1,5 +1,6 @@
 <?php
 include('src/login/config.php');
+//include('src/login/local.php');
 include('src/login/verifica_login.php');
 include('src/login/redirect.php');
 ?>
@@ -35,15 +36,20 @@ include('src/login/redirect.php');
                     <span>Inicio</span>
                 </a>
 				
+                <a href="src/cria-clientes/" target="Post" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <span>Clientes</span>
+                </a>
+                
                 <?php if ($_SESSION['master'] === 'adm') {?>
                                 <a href="src/cria-usuarios/" target="Post" class="list-group-item list-group-item-action bg-light">
-                                    <i class="fas fa-user" aria-hidden="true"></i>
-                                    <span>Criar/Editar Usuario</span>
+                                    <i class="fas fa-user-tie" aria-hidden="true"></i>
+                                    <span>Usuários</span>
                                 </a>
                 <?php	}; ?>
 
                 <a href="src/upload" target="Post" class="list-group-item list-group-item-action bg-light">
-                    <i class="fas fa-file-upload" aria-hidden="true"></i>
+                    <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
                     <span>Enviar Arquivo</span>
 				</a>
 
@@ -78,14 +84,14 @@ include('src/login/redirect.php');
                     <ul class="navbar-nav ml-auto">
                             
                         <li class="nav-item">
-                            Buscar:&nbsp;&nbsp;
+                            Busca:&nbsp;&nbsp;
                         </li>     
                         <li class="nav-item">
 
                             <form name="frmBusca" method="post" target="Post" action="src/pesquisa/cliente.php?a=buscar">
                                 <div class="input-group">
                                     <input name="cliente" id="txt_consulta" placeholder="pelo nome do cliente" type="text"
-                                        class="form-control">
+                                        class="form-control" required>
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="submit">
                                             <i class="fas fa-search" aria-hidden="true"></i>
@@ -100,10 +106,10 @@ include('src/login/redirect.php');
                         </li>     
                         <li class="nav-item">
 
-                            <form name="frmBusca" method="post" target="Post" action="src/pesquisa/cliente.php?a=buscar">
+                            <form name="frmBusca" method="post" target="Post" action="src/pesquisa/cpf.php?a=buscar">
                                 <div class="input-group">
                                     <input name="cpf" id="txt_consulta" placeholder="pelo CPF do cliente" type="text" oninput="mascara(this)"
-                                        class="form-control">
+                                        class="form-control" required>
                                     <div class="input-group-append">
                                         <button class="btn btn-success" type="submit">
                                             <i class="fas fa-search" aria-hidden="true"></i>
@@ -120,7 +126,7 @@ include('src/login/redirect.php');
 
                             <form name="frmBusca" method="post" target="Post" action="src/pesquisa/arquivo.php?a=buscar">
                                 <div class="input-group">
-                                    <input name="arquivo" id="txt_consulta" placeholder="pelo nome do arquivo" type="text" class="form-control">
+                                    <input name="arquivo" id="txt_consulta" placeholder="pelo nome do arquivo" type="text" class="form-control" required>
                                     <div class="input-group-append">
                                         <button class="btn btn-danger" type="submit">
                                             <i class="fas fa-search" aria-hidden="true"></i>
@@ -142,7 +148,7 @@ include('src/login/redirect.php');
                 </iframe>
             </div>
 			<div class=" text-center text-muted" style="margin-bottom:0">
-				<p>RD Software &copy;</p>
+				<p>Desenvolvido por RayanDiniz &copy;</p>
 			</div>
         </div>
     </div>
@@ -154,7 +160,7 @@ include('src/login/redirect.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="src/app.js"></script>
+    <script src="http://nuvem.space/src/app.js"></script>
     <!-- Menu Toggle Script -->
     <script>
         $("#menu-toggle").click(function (e) {
