@@ -41,6 +41,6 @@ if (isset($_FILES['arquivo'])) {
 echo $msg;
 echo $cpf;
 echo $data;
-header("Refresh: 2;url= ./");
+header("Refresh: 3;url= ./");
 die();
 ?>

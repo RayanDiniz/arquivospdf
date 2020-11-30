@@ -14,7 +14,7 @@ if ($_SESSION['master'] === 'adm') {
 		$pdo_insere->execute(array((int)$_GET['del']));
 
 		// Redireciona para o index.php
-		header('location: /');
+		header('location: ./');
 	}
 
 	// Verifica se algo foi postado para publicar ou editar
