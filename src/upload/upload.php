@@ -31,11 +31,11 @@ if (isset($_FILES['arquivo'])) {
 
         $sql_code = "INSERT INTO arquivos (titulo, link, dat, tipo, cpf_cliente)
         VALUES (
-            {'$titulo'},
-            {'$link'},
-            {$data},
-            {'$tipo'},
-            {$cpf}, 
+            '$titulo',
+            '$link',
+            $data,
+            '$tipo',
+            '$cpf', 
         )";
 
         if ($conexao_pdo->query($sql_code)){

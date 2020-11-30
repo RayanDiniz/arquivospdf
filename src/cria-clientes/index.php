@@ -117,7 +117,6 @@ if (isset($_POST) && !empty($_POST)) {
 		<h3>Clientes já cadastrados:</h3>
 		<table border="1" cellpadding="5">
 			<tr>
-				<th>ID</th>
 				<th>Nome do Cliente</th>
 				<th>CPF</th>
 				<th>Excluir Cliente</th>
@@ -130,7 +129,6 @@ if (isset($_POST) && !empty($_POST)) {
 
 			?>
 				<tr>
-					<td><?php echo $id_cli ?></td>
 					<td><?php echo $nome ?></td>
 					<td><?php echo $cpf ?></td>
 
