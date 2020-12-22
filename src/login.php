@@ -38,32 +38,32 @@ session_start();
 						echo "<div class='alert alert-danger'>" . $_SESSION['login_erro'] . "</div>";
 						$_SESSION['login_erro'] = '';
 					endif; ?>
-						<div class=" input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+					<div class=" input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+						</div>
+						<input type="text" name="usuario" id="" class="form-control" placeholder="Nome do Usuario" aria-describedby="helpId" required>
 					</div>
-					<input type="text" name="usuario" id="" class="form-control" placeholder="Nome do Usuario" aria-describedby="helpId" required>
-			</div>
-			<small id="helpId" class="text-muted">Digite o nome de seu usuario para logar na nuvem.</small>
+					<small id="helpId" class="text-muted">Digite o nome de seu usuario para logar na nuvem.</small>
 
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
-				</div>
-				<input type="password" name="senha" id="" class="form-control" placeholder="Senha do Usuario" aria-describedby="helpId" required>
-			</div>
-			<small id="helpId" class="text-muted">Digite a senha de seu usuario para logar na nuvem.</small>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
+						</div>
+						<input type="password" name="senha" id="" class="form-control" placeholder="Senha do Usuario" aria-describedby="helpId" required>
+					</div>
+					<small id="helpId" class="text-muted">Digite a senha de seu usuario para logar na nuvem.</small>
 
-			<div class="text-center">
-				<button type="sumit" class="btn btn-primary btn-lg text-center">Entrar</button>
-			</div>
+					<div class="text-center">
+						<button type="sumit" class="btn btn-primary btn-lg text-center">Entrar</button>
+					</div>
 
-			<div class=" text-center text-muted" style="margin-bottom:0">
-				<p>RayanDiniz &copy;</p>
+					<div class=" text-center text-muted" style="margin-bottom:0">
+						<p>Desenvolvido por RayanDiniz &copy;</p>
+					</div>
+				</form>
 			</div>
-			</form>
 		</div>
-	</div>
 	</div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
