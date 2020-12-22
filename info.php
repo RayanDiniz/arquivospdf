@@ -13,14 +13,14 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h1 class="display-3">Seja Bem-Vindo(a)</h1>
-      <p class="lead">Ao sistema de armazenamento de arquivos pdf na nuvem</p>
+      <h3 class="display-3">Bem-Vindo(a)</h3>
+      <p class="lead">ao sistema de armazenamento de arquivos pdf na nuvem</p>
       <hr class="my-2">
-      <p>Mais informações</p>
+      <p>Caso esteja com problemas envie um e-mail e relate:</p>
       <p class="lead">
         <form method="post" name="meu-form" action="send-mail.php">
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <label for="exampleFormControlInput1" class="form-label">E-mail</label>
             <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@example.com">
           </div>
           <div class="mb-3">
