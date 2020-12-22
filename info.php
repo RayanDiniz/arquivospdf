@@ -13,7 +13,7 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h3 class="display-2">Bem-Vindo(a)</h3>
+      <h3 class="display-5">Bem-Vindo(a)</h3>
       <p class="lead">ao sistema de armazenamento de arquivos pdf na nuvem</p>
       <hr class="my-2">
       <p>Caso esteja com problemas envie um e-mail e relate:</p>
