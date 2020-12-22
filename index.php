@@ -136,7 +136,7 @@ include('src/login/redirect.php');
             </nav>
 
             <div class="container-fluid" style="height:80%;">
-                <h3 class="mt-4"><b><?php echo $_SESSION['nome_usuario'] ?></b></h3>
+                <!--<h3 class="mt-4"><b><php echo $_SESSION['nome_usuario'] ?></b></h3>-->
 
                 <iframe name="Post" src="info.php" width="100%" height="100%" frameborder=0 scrolling=yes>
 
