@@ -17,10 +17,11 @@
         <hr class="my-2">
         <p>Mais informações</p>
         <p class="lead">
-          <a class="text-success" href="https://api.whatsapp.com/send?phone=5598988922002&text=Ol%C3%A1!%20Estou%20com%20problemas%20no%20sistema%20Nuvem.">
-            <i class="fab fa-whatsapp fa-lg"></i>
-            Envie mensagem pelo whatsapp se estiver com problemas
-          </a>
+        <form method="post" name="meu-form" action="send-mail.php">    
+          Email:    <input type="text" name="email">     
+          Mensagem:  <textarea name="mensagem"></textarea>
+        <input type="submit" value="Enviar">
+        </form>
         </p>
       </div>
     </div>
