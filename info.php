@@ -26,7 +26,7 @@
           <label for="exampleFormControlTextarea1" class="form-label">Relate o Problema:</label>
           <textarea name="mensagem" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
-        <button type="button" class="btn btn-warning">Enviar</button>
+        <button type="submit" class="btn btn-warning">Enviar</button>
       </form>
     </p>
   </div>
