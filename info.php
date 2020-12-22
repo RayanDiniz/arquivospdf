@@ -20,7 +20,7 @@
       <p class="lead">
         <form method="post" name="meu-form" action="send-mail.php">
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+            <label for="exampleFormControlInput1" class="form-label">Seu E-mail</label>
             <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@example.com">
           </div>
           <div class="mb-3">
