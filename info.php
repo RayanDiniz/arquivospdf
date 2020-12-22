@@ -11,24 +11,26 @@
 </head>
 
 <body>
-  <div class="jumbotron">
-    <h3 class="display-5">Bem-Vindo(a)</h3>
-    <p class="lead">ao sistema de armazenamento de arquivos pdf na nuvem</p>
-    <hr class="my-2">
-    <p>Caso esteja com problemas envie um e-mail e relate:</p>
-    <p class="lead">
-      <form method="post" name="meu-form" action="send-mail.php">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-          <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@example.com">
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Relate o Problema:</label>
-          <textarea name="mensagem" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-warning">Enviar</button>
-      </form>
-    </p>
+  <div class="container-flex">
+    <div class="jumbotron">
+      <h3 class="display-5">Bem-Vindo(a)</h3>
+      <p class="lead">ao sistema de armazenamento de arquivos pdf na nuvem</p>
+      <hr class="my-2">
+      <p>Caso esteja com problemas envie um e-mail e relate:</p>
+      <p class="lead">
+        <form method="post" name="meu-form" action="send-mail.php">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+            <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Relate o Problema:</label>
+            <textarea name="mensagem" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning">Enviar</button>
+        </form>
+      </p>
+    </div>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
