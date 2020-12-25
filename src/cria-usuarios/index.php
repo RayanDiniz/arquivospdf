@@ -77,7 +77,6 @@ if ($_SESSION['master'] === 'adm') {
 		<p><a href="../login.php" target="/">Clique aqui</a> para ir a tela de login e testar o novo usuário em nova aba.</p>
 
 		<form action="" method="post">
-
 			<div class="form-row form-group">
 				<div class="col">
 					<label>Usuário</label>
