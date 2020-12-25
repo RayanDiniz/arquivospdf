@@ -103,12 +103,12 @@ if ($_SESSION['master'] === 'adm') {
 					<strong>Atenção!</strong><?php echo $erro; ?>
 				</div>
 			<?php endif; ?>
-			
+
 			<div class="btn-group">
 				<button type="submit" class="btn btn-primary">Cadastrar</button>
 			</div>
 		</form>
-
+		<br/>
 		<?php
 		// Mostra os usuários
 		$pdo_verifica = $conexao_pdo->prepare('SELECT * FROM usuarios ORDER BY id DESC');
