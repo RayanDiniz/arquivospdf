@@ -74,7 +74,7 @@ if ($_SESSION['master'] === 'adm') {
 		<h3>Usuários do Sistema</h3>
 
 		<p>Para editar, apenas digite o nome de usuário que deseja editar e altere os outros campos.</p>
-		<p><a href="../login.php" target="/">Clique aqui</a> para voltar a tela de login e testar o novo usuário.</p>
+		<p><a href="../login.php" target="/">Clique aqui</a> para ir a tela de login e testar o novo usuário em nova aba.</p>
 
 		<form action="" method="post">
 
@@ -92,8 +92,8 @@ if ($_SESSION['master'] === 'adm') {
 				</div>
 			</div>
 
+			<label>Nome Completo do Usuário</label>
 			<div class="input-group mb-3">
-				<label>Nome Completo do Usuário</label>
 				<span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-user"></i></span>
 				<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Nome" name="form_nome" required>
 			</div>
