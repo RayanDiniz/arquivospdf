@@ -104,46 +104,50 @@ if ($_SESSION['master'] === 'adm') {
 				</div>
 			<?php endif; ?>
 			
-			<input type="submit" value="Entrar">
+			<div class="btn-group">
+				<button type="submit" class="btn btn-primary">Cadastrar</button>
+			</div>
 		</form>
 
-	<?php
-	// Mostra os usuários
-	$pdo_verifica = $conexao_pdo->prepare('SELECT * FROM usuarios ORDER BY id DESC');
-	$pdo_verifica->execute();
-	?>
-
-	<table border="1" cellpadding="5">
-		<tr>
-			<th>ID</th>
-			<th>Nome</th>
-			<th>Usuário</th>
-			<th>Senha Criptografada</th>
-			<th>Ação</th>
-		</tr>
 		<?php
-		while ($fetch = $pdo_verifica->fetch()) {
-			$id_user = $fetch['id'];
-			$master = $fetch['master'];
-			
-			echo '<tr>';
-			echo '<td>' . $id_user . '</td>';
-			echo '<td>' . $fetch['nome'] . '</td>';
-			echo '<td>' . $fetch['usuario'] . '</td>';
-			echo '<td>' . $fetch['senha'] . '</td>';
-			if($master != 'adm'){ 	
-			echo '<td> <a style="color:red;" href="?del=' . $fetch['id'] . '">Apagar</a> </td>';	
-			}else{echo '<td>Não Apagar Adm</td>';};
-			echo '</tr>';
+		// Mostra os usuários
+		$pdo_verifica = $conexao_pdo->prepare('SELECT * FROM usuarios ORDER BY id DESC');
+		$pdo_verifica->execute();
+		?>
+
+		<table border="1" cellpadding="5">
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Usuário</th>
+				<th>Senha Criptografada</th>
+				<th>Ação</th>
+			</tr>
+			<?php
+			while ($fetch = $pdo_verifica->fetch()) {
+				$id_user = $fetch['id'];
+				$master = $fetch['master'];
+				
+				echo '<tr>';
+				echo '<td>' . $id_user . '</td>';
+				echo '<td>' . $fetch['nome'] . '</td>';
+				echo '<td>' . $fetch['usuario'] . '</td>';
+				echo '<td>' . $fetch['senha'] . '</td>';
+				if($master != 'adm'){ 	
+				echo '<td> <a style="color:red;" href="?del=' . $fetch['id'] . '">Apagar</a> </td>';	
+				}else{echo '<td>Não Apagar Adm</td>';};
+				echo '</tr>';
+			}
+			?>
+		</table>
+
+		<?php
+		} else {
+			echo 'Você não tem acesso a essa pagina!';
+			header("Refresh: 2;url= ../../");
 		}
 		?>
-	</table>
-<?php
-} else {
-	echo 'Você não tem acesso a essa pagina!';
-	header("Refresh: 2;url= ../../");
-}
-?>
+	</div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
