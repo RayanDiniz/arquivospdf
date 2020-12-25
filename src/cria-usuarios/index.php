@@ -58,50 +58,54 @@ if ($_SESSION['master'] === 'adm') {
 		}
 	}
 ?>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<html>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  </head>
+  <body>
+	<div class="container">
+		<h3>Usuários do Sistema</h3>
 
-<head>
-	<meta charset="UTF-8">
+		<p>Para editar, apenas digite o nome de usuário que deseja editar e altere os outros campos.</p>
+		<p><a href="../login.php" target="/">Clique aqui</a> para voltar a tela de login e testar o novo usuário.</p>
 
-	<title>Login</title>
-</head>
+		<form action="" method="post">
 
-<body>
-	<p>Para editar, apenas digite o nome de usuário que deseja editar.</p>
-	<p><a href="../login.php" target="/">Clique aqui</a> para voltar a tela de login e testar.</p>
-	<form action="" method="post">
-		<table>
-			<tr>
-				<td>Usuário</td>
-			</tr>
-			<tr>
-				<td><input type="text" name="form_usuario" required></td>
-			</tr>
-			<tr>
-				<td>Senha</td>
-			</tr>
-			<tr>
-				<td><input type="password" name="form_senha" required></td>
-			</tr>
-			<tr>
-				<td>Nome Completo</td>
-			</tr>
-			<tr>
-				<td><input type="text" name="form_nome"></td>
-			</tr>
+			<div class="form-row form-group">
+				<div class="col">
+					<label>Usuário</label>
+					<div class="input-group flex-nowrap">
+						<span class="input-group-text" id="addon-wrapping">@</span>
+						<input type="text" class="form-control" placeholder="Usuário" name="form_usuario" required>
+					</div>
+				</div>
+				<div class="col-7">
+					<label>Senha do Usuário</label>
+					<input type="password" class="form-control" placeholder="Senha" name="form_senha" required>
+				</div>
+			</div>
 
+			<div class="input-group mb-3">
+				<label>Nome Completo do Usuário</label>
+				<span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-user"></i></span>
+				<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Nome" name="form_nome" required>
+			</div>
+	
 			<?php if (!empty($erro)) : ?>
-				<tr>
-					<td style="color: red;"><?php echo $erro; ?></td>
-				</tr>
+				<div class="alert alert-danger" role="alert">
+					<strong>Atenção!</strong><?php echo $erro; ?>
+				</div>
 			<?php endif; ?>
-
-			<tr>
-				<td><input type="submit" value="Entrar"></td>
-			</tr>
-		</table>
-	</form>
+			
+			<input type="submit" value="Entrar">
+		</form>
 
 	<?php
 	// Mostra os usuários
@@ -140,6 +144,10 @@ if ($_SESSION['master'] === 'adm') {
 	header("Refresh: 2;url= ../../");
 }
 ?>
-</body>
-
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
