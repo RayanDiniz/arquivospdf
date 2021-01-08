@@ -29,11 +29,14 @@ session_start();
 	<div class="container">
 		<div class="row justify-content-center align-items-center">
 			<div class="col-sm-5">
-				<div class="text-center"	style="color: #00BFFF;">
-					<i class="fas fa-angle-double-right fa-2x"></i>
+				<div class="text-center" style="color: #00BFFF;">
+					<!--<i class="fas fa-angle-double-right fa-2x"></i>-->
 					<i class="fa fa-cloud fa-5x" aria-hidden="true"></i>
 				</div><br/>
-				<form action="../" method="post"">
+				<div class="alert alert-warning" role="alert">
+					<strong>Atenção!</strong> Seu boleto está disponível para pagamento.
+				</div><br />
+				<form action="../" method="post">
 					<?php if (!empty($_SESSION['login_erro'])) :
 						echo "<div class='alert alert-danger'>" . $_SESSION['login_erro'] . "</div>";
 						$_SESSION['login_erro'] = '';
