@@ -32,10 +32,10 @@ session_start();
 				<div class="text-center" style="color: #00BFFF;">
 					<!--<i class="fas fa-angle-double-right fa-2x"></i>-->
 					<i class="fa fa-cloud fa-5x" aria-hidden="true"></i>
-				</div><br/>
+				</div>
 				<div class="alert alert-warning" role="alert">
 					<strong>Atenção!</strong> Seu boleto está disponível para pagamento.
-				</div><br />
+				</div>
 				<form action="../" method="post">
 					<?php if (!empty($_SESSION['login_erro'])) :
 						echo "<div class='alert alert-danger'>" . $_SESSION['login_erro'] . "</div>";
@@ -56,11 +56,11 @@ session_start();
 						<input type="password" name="senha" id="" class="form-control" placeholder="Senha do Usuario" aria-describedby="helpId" required>
 					</div>
 					<small id="helpId" class="text-muted">Digite a senha de seu usuario para logar na nuvem.</small>
-
+					<br />
 					<div class="text-center">
 						<button type="sumit" class="btn btn-primary btn-lg text-center">Entrar</button>
 					</div>
-
+					<br />
 					<div class=" text-center text-muted" style="margin-bottom:0">
 						<p>Desenvolvido por RayanDiniz &copy;</p>
 					</div>
