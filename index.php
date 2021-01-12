@@ -46,8 +46,8 @@ include('src/login/redirect.php');
                         <span>Usuários do Sistema</span>
                     </a>
                     <a href="src/pagamentos/" target="Post" class="list-group-item list-group-item-action bg-light">
-                        <i class="fas fa-user-tie" aria-hidden="true"></i>
-                        <span>Gerenciador de Pagamentos</span>
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
+                        <span>Pagamentos</span>
                     </a>
                 <?php    }; ?>
 

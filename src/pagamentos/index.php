@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   </head>
 <body>
     <?php
@@ -19,22 +20,29 @@
           // Variavél para preencher o erro (se existir)
           $erro = false;
     ?>
-    <h1>Controle de pagamento do Sistema</h1>
+    <h3>Controle de pagamento do Sistema</h3>
     <?php
       // Mostra os usuários
       $pdo_verifica = $conexao_pdo->prepare('SELECT * FROM pagamentos ORDER BY id DESC');
       $pdo_verifica->execute();
     ?>
-    <table>
+    <table border="1">
       <tr><th>Data</th><th>Boleto</th><th>Status</th></tr>
 	<?php
 	  while ($fetch = $pdo_verifica->fetch()) {
         $id_pg = $fetch['id'];
-
+        
+        $boleto = $fetch['boleto'];
       echo '<tr>';
       echo '<td>' . $fetch['data'] . '</td>';
-      echo '<td>' . $fetch['boleto'] . '</td>';
-      echo '<td>' . $fetch['status'] . '</td>';
+      echo '<td><a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a></td>';
+      echo '<td>'. 
+        if(status $fetch['status'] = 1){
+          echo 'Pago';
+        }else{
+            echo 'Pendente';
+        }
+       . '</td>';
       echo '</tr>';
 
       }
