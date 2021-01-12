@@ -44,7 +44,7 @@
     ?>
         <tbody>
             <tr>
-                <th scope="row"><?php echo $id_pg ?></th>
+                <th scope="row"><?php echo $id_pg*1 ?></th>
                 <td><?php echo $data ?></td>
 
                 <?php
