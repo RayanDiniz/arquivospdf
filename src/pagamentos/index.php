@@ -35,7 +35,11 @@
         $boleto = $fetch['boleto'];
       echo '<tr>';
       echo '<td>' . $fetch['data'] . '</td>';
-      echo '<td><a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a></td>';
+        if ( $boleto = "null" ) {
+          echo '<td>Boleto Indisponível</td>';
+        }else{
+          echo '<td><a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a></td>';
+        }
       echo '<td>';
         if ( $fetch['status'] = 1 ){
           echo 'Pago';
