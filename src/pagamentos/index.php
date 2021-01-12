@@ -31,18 +31,18 @@
 	<?php
 	  while ($fetch = $pdo_verifica->fetch()) {
         $id_pg = $fetch['id'];
-        
+
         $boleto = $fetch['boleto'];
       echo '<tr>';
       echo '<td>' . $fetch['data'] . '</td>';
       echo '<td><a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a></td>';
-      echo '<td>'. 
-        if(status $fetch['status'] = 1){
+      echo '<td>';
+        if ( $fetch['status'] = 1 ){
           echo 'Pago';
         }else{
             echo 'Pendente';
         }
-       . '</td>';
+      echo '</td>';
       echo '</tr>';
 
       }
