@@ -56,7 +56,7 @@
                     }
                 echo '</td>';
                 echo '<td>';
-                    if($status === 1){
+                    if ($status == 1) {
                         echo 'Pago';
                     }else{
                         echo 'Pendente';
