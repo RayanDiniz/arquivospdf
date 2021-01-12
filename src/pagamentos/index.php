@@ -46,8 +46,9 @@
     ?>
         <tbody>
             <tr>
-                <th scope="row"><? echo $id_pg ?></th>
+                <th scope="row"><? echo $id_pg * 1 ?></th>
                 <td><? echo $data ?></td>
+                
                 <? if ( $boleto === "null" ) {
                 echo '<td>Boleto Indisponível</td>';
                 }else{
