@@ -31,7 +31,8 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Data</th>
+                <th scope="col">Data de Vencimento</th>
+                <th scope="col">Valor</th>
                 <th scope="col">Boleto</th>
                 <th scope="col">Status</th>
             </tr>
@@ -40,6 +41,7 @@
 	  while ($fetch = $pdo_verifica->fetch()) {
         $id_pg = $fetch['id'];
         $boleto = $fetch['boleto'];
+        $valor = $fetch['valor'];
         $data = $fetch['data'];
         $status = $fetch['status'];
     ?>
@@ -53,6 +55,7 @@
             >
                 <th scope="row"><?php echo $id_pg*1 ?></th>
                 <td><?php echo $data ?></td>
+                <td><?php echo $valor ?></td>
 
                 <?php
                 echo '<td>';
