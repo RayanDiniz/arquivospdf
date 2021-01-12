@@ -46,8 +46,8 @@
     ?>
         <tbody>
             <tr>
-                <th scope="row"><? echo $id_pg * 1;?></th>
-                <td><? echo $data;?></td>
+                <th scope="row"><? echo .$id_pg.;?></th>
+                <td><? echo .$data.;?></td>
 
                 <? if ( $boleto === "null" ) {
                 echo '<td>Boleto Indisponível</td>';
@@ -55,7 +55,7 @@
                 echo '<td><a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a></td>';
                 } 
                 echo '<td>';
-                    if (  == 1 ){
+                    if (  === 1 ){
                     echo 'Pago';
                     }else{
                         echo 'Pendente';
