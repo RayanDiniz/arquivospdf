@@ -55,7 +55,7 @@
             >
                 <th scope="row"><?php echo $id_pg*1 ?></th>
                 <td><?php echo $data ?></td>
-                <td><?php echo $valor ?></td>
+                <td>R$ <?php echo $valor ?></td>
 
                 <?php
                 echo '<td>';
