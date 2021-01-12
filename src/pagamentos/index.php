@@ -44,14 +44,17 @@
     ?>
         <tbody>
             <tr>
-                <th scope="row"><?php echo .$id_pg.;?></th>
-                <td><?php echo .$data.;?></td>
+                <th scope="row"><?php echo $id_pg ?></th>
+                <td><?php echo $data ?></td>
 
-                <?php if ( $boleto === "null" ) {
-                echo '<td>Boleto Indisponível</td>';
-                }else{
-                echo '<td><a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a></td>';
-                };
+                <?php
+                echo '<td>';
+                    if ( $boleto === "null" ) {
+                        echo 'Boleto Indisponível';
+                    }else{
+                        echo '<a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a>';
+                    }
+                echo '</td>';
                 echo '<td>';
                     if (  === 1 ){
                     echo 'Pago';
