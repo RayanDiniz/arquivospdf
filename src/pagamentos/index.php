@@ -49,15 +49,15 @@
 
                 <?php
                 echo '<td>';
-                    if ( $boleto === "null" ) {
+                    if ($boleto === "null") {
                         echo 'Boleto Indisponível';
                     }else{
                         echo '<a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a>';
                     }
                 echo '</td>';
                 echo '<td>';
-                    if (  === 1 ){
-                    echo 'Pago';
+                    if($status === 1){
+                        echo 'Pago';
                     }else{
                         echo 'Pendente';
                     }
