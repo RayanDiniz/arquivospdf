@@ -21,7 +21,8 @@
           $erro = false;
     ?>
     <div class="container">
-        <h3>Controle de pagamento do Sistema</h3>
+        <h3>Controle de Pagamento do Sistema</h3>
+        <p>Caso precise emitir um novo boleto por atraso a data de vencimento, entre em contato com o desenvolvedor do sistema.</p>
     <?php
       $pdo_verifica = $conexao_pdo->prepare('SELECT * FROM pagamentos ORDER BY id DESC');
       $pdo_verifica->execute();
