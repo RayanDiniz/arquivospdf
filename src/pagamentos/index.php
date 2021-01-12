@@ -21,10 +21,8 @@
           $erro = false;
     ?>
     <div class="container">
-        
-    <h3>Controle de pagamento do Sistema</h3>
+        <h3>Controle de pagamento do Sistema</h3>
     <?php
-      // Mostra os usuários
       $pdo_verifica = $conexao_pdo->prepare('SELECT * FROM pagamentos ORDER BY id DESC');
       $pdo_verifica->execute();
     ?>
@@ -46,14 +44,14 @@
     ?>
         <tbody>
             <tr>
-                <th scope="row"><? echo .$id_pg.;?></th>
-                <td><? echo .$data.;?></td>
+                <th scope="row"><?php echo .$id_pg.;?></th>
+                <td><?php echo .$data.;?></td>
 
-                <? if ( $boleto === "null" ) {
+                <?php if ( $boleto === "null" ) {
                 echo '<td>Boleto Indisponível</td>';
                 }else{
                 echo '<td><a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a></td>';
-                } 
+                };
                 echo '<td>';
                     if (  === 1 ){
                     echo 'Pago';
@@ -62,7 +60,7 @@
                     }
                 echo '</td>';
 
-                }
+    }
                 ?>
 
             </tr>
