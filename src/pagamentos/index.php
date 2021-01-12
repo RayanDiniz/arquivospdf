@@ -26,7 +26,7 @@
       $pdo_verifica = $conexao_pdo->prepare('SELECT * FROM pagamentos ORDER BY id DESC');
       $pdo_verifica->execute();
     ?>
-    <table class="table table-striped table-dark">
+    <table class="table table-hover table-dark">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -43,7 +43,13 @@
         $status = $fetch['status'];
     ?>
         <tbody>
-            <tr>
+            <tr
+            <?php 
+                if ($status == 1) {
+                    echo 'class="bg-success"';
+                }
+            ?>
+            >
                 <th scope="row"><?php echo $id_pg*1 ?></th>
                 <td><?php echo $data ?></td>
 
