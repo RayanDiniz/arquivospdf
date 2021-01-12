@@ -20,37 +20,52 @@
           // Variavél para preencher o erro (se existir)
           $erro = false;
     ?>
+    <div class="container">
+        
     <h3>Controle de pagamento do Sistema</h3>
     <?php
       // Mostra os usuários
       $pdo_verifica = $conexao_pdo->prepare('SELECT * FROM pagamentos ORDER BY id DESC');
       $pdo_verifica->execute();
     ?>
-    <table border="1">
-      <tr><th>Data</th><th>Boleto</th><th>Status</th></tr>
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Data</th>
+                <th scope="col">Boleto</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
 	<?php
 	  while ($fetch = $pdo_verifica->fetch()) {
         $id_pg = $fetch['id'];
-
         $boleto = $fetch['boleto'];
-      echo '<tr>';
-      echo '<td>' . $fetch['data'] . '</td>';
-        if ( $boleto === "null" ) {
-          echo '<td>Boleto Indisponível</td>';
-        }else{
-          echo '<td><a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a></td>';
-        }
-      echo '<td>';
-        if ( $fetch['status'] == 1 ){
-          echo 'Pago';
-        }else{
-            echo 'Pendente';
-        }
-      echo '</td>';
-      echo '</tr>';
-
-      }
+        $data = $fetch['data'];
+        $status = $fetch['status'];
     ?>
+        <tbody>
+            <tr>
+                <th scope="row"><? echo $id_pg ?></th>
+                <td><? echo $data ?></td>
+                <? if ( $boleto === "null" ) {
+                echo '<td>Boleto Indisponível</td>';
+                }else{
+                echo '<td><a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a></td>';
+                } 
+                echo '<td>';
+                    if (  == 1 ){
+                    echo 'Pago';
+                    }else{
+                        echo 'Pendente';
+                    }
+                echo '</td>';
+
+                }
+                ?>
+
+            </tr>
+        </tbody>
     </table>
     <?php
       }else{
@@ -58,6 +73,8 @@
         header("Refresh: 2;url= ../../");
       }
     ?>
+    
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
