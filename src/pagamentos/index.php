@@ -43,6 +43,7 @@
         $boleto = $fetch['boleto'];
         $valor = $fetch['valor'];
         $data = $fetch['data'];
+        $data = implode("/", array_reverse(explode("-", $data)));
         $status = $fetch['status'];
     ?>
         <tbody>
@@ -62,7 +63,7 @@
                     if ($boleto === "null") {
                         echo 'Boleto Indisponível';
                     }else{
-                        echo '<a href="./boletos/'.$boleto.'.pdf">'.$boleto.'</a>';
+                        echo '<a target="blanck" href="./boletos/'.$boleto.'.pdf">Baixar Boleto</a>';
                     }
                 echo '</td>';
                 echo '<td>';
