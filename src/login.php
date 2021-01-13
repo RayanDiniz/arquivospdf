@@ -43,9 +43,9 @@ session_start();
 						$data1 = implode("/", array_reverse(explode("-", $data1)));
 						$data2 = date ('d/m/Y');
 						// Comparando as Datas
-						if(strtotime($data1) > strtotime($data2)){
-							echo '<div class="alert alert-info" role="alert"><strong>Atenção!</strong> Seu boleto está disponível para pagamento e vence no dia '.$data1 .$data2.'.</div>';
-						}elseif(strtotime($data1) == strtotime($data2)){
+						if (strtotime($data1) > strtotime($data2)) {
+							echo '<div class="alert alert-info" role="alert"><strong>Atenção!</strong> Seu boleto está disponível para pagamento e vence no dia '.$data1.'.</div>';
+						}elseif (strtotime($data1) == strtotime($data2)) {
 							echo '<div class="alert alert-warning" role="alert"><strong>Atenção!</strong> Seu boleto Vence hoje.</div>';
 						}else{
 							echo '<div class="alert alert-danger" role="alert"><strong>Atenção!</strong> Seu boleto Venceu em '.$data1.', entre em contato com o desenvolvedor.</div>';
