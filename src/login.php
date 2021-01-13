@@ -39,29 +39,16 @@ session_start();
 					$pdo_verifica->execute();
 					
 					while ($fetch = $pdo_verifica->fetch()) {
-						$id_pg = $fetch['id'];
 						$data1 = $fetch['data'];
 						$data1 = implode("/", array_reverse(explode("-", $data1)));
 						$data2 = date ('d/m/Y');
 						// Comparando as Datas
 						if(strtotime($data1) > strtotime($data2)){
-							 echo '
-							<div class="alert alert-info" role="alert">
-								<strong>Atenção!</strong> Seu boleto está disponível para pagamento.
-							</div>
-							';
+							echo '<div class="alert alert-info" role="alert"><strong>Atenção!</strong> Seu boleto está disponível para pagamento.</div>';
 						}elseif(strtotime($data1) == strtotime($data2)){
-						 echo '
-							<div class="alert alert-warning" role="alert">
-								<strong>Atenção!</strong> Seu boleto Vence hoje.
-							</div>
-							';
+							echo '<div class="alert alert-warning" role="alert"><strong>Atenção!</strong> Seu boleto Vence hoje.</div>';
 						}else{
-							 echo '
-							<div class="alert alert-danger" role="alert">
-								<strong>Atenção!</strong> Seu boleto Venceu, entre em contato com o desenvolvedor.
-							</div>
-							';
+							echo '<div class="alert alert-danger" role="alert"><strong>Atenção!</strong> Seu boleto Venceu, entre em contato com o desenvolvedor.</div>';
 						}
 					}
 				?>
