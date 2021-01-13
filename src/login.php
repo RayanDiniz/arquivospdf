@@ -47,7 +47,7 @@ session_start();
 							echo '<div class="alert alert-info" role="alert"><strong>Atenção!</strong> Seu boleto está disponível para pagamento e vence no dia '.$data2.'.</div>';
 						}
 						if (strtotime($data1) == strtotime($data2)) {
-							echo '<div class="alert alert-warning" role="alert"><strong>Atenção!</strong> Seu boleto Vence hoje.</div>';
+							echo '<div class="alert alert-warning" role="alert"><strong>Atenção!</strong> Seu boleto Vence hoje '.$data2.' '.$data1.'.</div>';
 						}
 						if (strtotime($data1) < strtotime($data2)) {
 							echo '<div class="alert alert-danger" role="alert"><strong>Atenção!</strong> Seu boleto Venceu em '.$data2.', entre em contato com o desenvolvedor.</div>';
