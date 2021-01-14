@@ -20,7 +20,7 @@ include('./components/Header-html.php');
 					Nuvem
 				</h1>
 				<h4 class="text-secondary">A Nuvem.space ajuda você armazenar com segurança os documentos de sua
-					empresa com facilidade.
+					empresa e com facilidade.
 				</h4>
 			</div>
 			<div class="col shadow p-3 mb-5 bg-white rounded-lg">
