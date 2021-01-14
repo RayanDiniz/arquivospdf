@@ -42,12 +42,14 @@ include('./components/Header-html.php');
 						<button type="sumit" class="btn btn-primary btn-lg text-center">Entrar</button>
 					</div>
 					<br />
-					<div class=" text-center text-muted" style="margin-bottom:0">
-						<p>Desenvolvido por RayanDiniz &copy;</p>
-					</div>
 				</form>
 			</div>
 			<div class="col-sm-4">
+			</div>
+		</div>
+		<div class="row">
+			<div class=" text-center text-muted" style="margin-bottom:0">
+				<p>Desenvolvido por RayanDiniz &copy;</p>
 			</div>
 		</div>
 	</div>
