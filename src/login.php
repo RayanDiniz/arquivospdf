@@ -7,7 +7,7 @@ include('./components/Header-html.php');
 <div class="container-fluid bg-light">
 	<div class="container">
 	<?php include('./variavel-aviso.php'); ?>
-		<div class="row p-4">
+		<div class="row p-3">
 			<div class="col">
 			<?php echo $AVISO ?>
 			</div>
