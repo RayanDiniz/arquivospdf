@@ -6,7 +6,7 @@ session_start();
 include('./components/Header-html.php');
 ?>
 	<div class="container-fluid bg-light">
-		<div class="row justify-content-center align-items-center">
+		<div class="row mt-20">
 			<div class="col-sm text-center" style="color: #00BFFF">
 				<h1>Nuvem</h1>
 				<!--<i class="fas fa-angle-double-right fa-2x"></i>-->
