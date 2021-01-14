@@ -5,9 +5,8 @@ session_start();
 
 include('./components/Header-html.php');
 ?>
-<body>
 	<div class="container">
-		<div class="row justify-content-center align-items-center">
+		<div class="row justify-content-center align-items-center shadow p-3 mb-5 bg-white rounded">
 			<div class="col-sm-5">
 				<div class="text-center" style="color: #00BFFF;">
 					<!--<i class="fas fa-angle-double-right fa-2x"></i>-->
