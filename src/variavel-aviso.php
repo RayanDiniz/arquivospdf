@@ -20,7 +20,7 @@ $pdo_verifica->execute();
         }
     };
 
-    $AVISO = echo '
+    $AVISO = '
         <div class="alert alert-warning" role="alert">
             <strong>BLOQUEADO!</strong> Seu serviço foi bloqueado.
         </div>
