@@ -1,6 +1,6 @@
 <?php
 include('./login/config.php');
-    $avisoPagamentoLogin = (
+    $avisoPagamentoLogin = {
         $pdo_verifica = $conexao_pdo->prepare('SELECT * FROM pagamentos WHERE status = 0 AND boleto != "null"');
         $pdo_verifica->execute();
         
@@ -19,5 +19,5 @@ include('./login/config.php');
                 echo '<div class="alert alert-danger" role="alert"><strong>Atenção!</strong> Seu boleto venceu em '.$data2.', entre em contato com o desenvolvedor.</div>';
             }
         }
-    );
+    };
 ?>
