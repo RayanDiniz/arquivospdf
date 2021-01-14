@@ -1,8 +1,8 @@
 ﻿<?php
-include('./variavel-aviso.php');
 // Inicia a sessão
 session_start();
 
+include('./variavel-aviso.php');
 include('./components/Header-html.php');
 ?>
 <div class="container-fluid bg-light pt-4">
