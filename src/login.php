@@ -6,6 +6,12 @@ include('./components/Header-html.php');
 ?>
 <div class="container-fluid bg-light pt-4">
 	<div class="container p-5">
+	<?php include('./variavel-aviso.php'); ?>
+		<div class="row">
+			<div class="col">
+			<?php echo $AVISO ?>
+			</div>
+		</div>
 		<div class="row pt-5">
 			<div class="col">
 				<h1 style="color: #00BFFF">
@@ -18,8 +24,7 @@ include('./components/Header-html.php');
 				</h4>
 			</div>
 			<div class="col shadow p-3 mb-5 bg-white rounded-lg">
-				<?php include('./variavel-aviso.php');
-					echo $avisoPagamentoLogin; ?>
+				<?php echo $avisoPagamentoLogin; ?>
 				<form action="../" method="post">
 					<?php if (!empty($_SESSION['login_erro'])) :
 						echo "<div class='alert alert-danger'>" . $_SESSION['login_erro'] . "</div>";

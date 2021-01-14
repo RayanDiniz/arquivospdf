@@ -16,8 +16,14 @@ $pdo_verifica->execute();
             $avisoPagamentoLogin =  '<div class="alert alert-warning" role="alert"><strong>Atenção!</strong> Seu boleto vence hoje '.$data2.'.</div>';
         }
         if (strtotime($data1) < strtotime($data2)) {
-            $avisoPagamentoLogin =  '<div class="alert alert-danger" role="alert"><strong>Atenção!</strong> Seu boleto venceu em '.$data2.', entre em contato com o desenvolvedor.</div>';
+            $avisoPagamentoLogin =  '<div class="alert alert-danger" role="alert"><strong>Pagamento Pendente!</strong> Seu boleto venceu '.$data2.', entre em contato com o desenvolvedor para desbloquear o sistema.</div>';
         }
     };
+
+    $AVISO = echo '
+        <div class="alert alert-warning" role="alert">
+            <strong>BLOQUEADO!</strong> Seu serviço foi bloqueado.
+        </div>
+    ';
 
 ?>
