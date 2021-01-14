@@ -5,13 +5,16 @@ session_start();
 
 include('./components/Header-html.php');
 ?>
-	<div class="container">
-		<div class="row justify-content-center align-items-center shadow p-3 mb-5 bg-white rounded">
-			<div class="col-sm-5">
-				<div class="text-center" style="color: #00BFFF;">
+	<div class="container bg-light">
+		<div class="row justify-content-center align-items-center">
+			<div class="col-sm" style="color: #00BFFF">
+				<h1>Nuvem</h1>
+				<div class="text-center">
 					<!--<i class="fas fa-angle-double-right fa-2x"></i>-->
 					<i class="fa fa-cloud fa-5x" aria-hidden="true"></i>
 				</div>
+			</div>
+			<div class="col-sm-5 shadow p-3 mb-5 bg-white rounded">
 				<?php echo $avisoPagamentoLogin ?>
 				<form action="../" method="post">
 					<?php if (!empty($_SESSION['login_erro'])) :
