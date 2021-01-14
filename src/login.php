@@ -6,13 +6,16 @@ session_start();
 include('./components/Header-html.php');
 ?>
 	<div class="container-fluid bg-light">
-		<div class="row mt-20">
+		<div class="row">
+			<br><br><br>
+		</div>
+		<div class="row justify-content-center align-items-center">
 			<div class="col-sm text-center" style="color: #00BFFF">
 				<h1>Nuvem</h1>
 				<!--<i class="fas fa-angle-double-right fa-2x"></i>-->
 				<i class="fa fa-cloud fa-5x" aria-hidden="true"></i>
 			</div>
-			<div class="col-sm-5 shadow p-3 mb-5 bg-white rounded">
+			<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded">
 				<?php echo $avisoPagamentoLogin ?>
 				<form action="../" method="post">
 					<?php if (!empty($_SESSION['login_erro'])) :
@@ -43,6 +46,8 @@ include('./components/Header-html.php');
 						<p>Desenvolvido por RayanDiniz &copy;</p>
 					</div>
 				</form>
+			</div>
+			<div class="col-sm-4">
 			</div>
 		</div>
 	</div>
