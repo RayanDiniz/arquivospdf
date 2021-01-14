@@ -3,7 +3,7 @@ include('./variavel-aviso.php');
 // Inicia a sessão
 session_start();
 
-include('../components/Header-html.php');
+include('./components/Header-html.php');
 ?>
 <body>
 	<div class="container">
