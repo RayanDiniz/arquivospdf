@@ -4,7 +4,7 @@ include('./login/config.php');
 $pdo_verifica = $conexao_pdo->prepare('SELECT * FROM pagamentos WHERE status = 0 AND boleto != "null"');
 $pdo_verifica->execute();
 
-    $avisoPagamentoLogin = while ($fetch = $pdo_verifica->fetch()) {
+    $avisoPagamentoLogins = while ($fetch = $pdo_verifica->fetch()) {
         $data2 = $fetch['data'];
         $data2 = implode("/", array_reverse(explode("-", $data2)));
         $data1 = date ('d/m/Y');
@@ -19,4 +19,6 @@ $pdo_verifica->execute();
             echo '<div class="alert alert-danger" role="alert"><strong>Atenção!</strong> Seu boleto venceu em '.$data2.', entre em contato com o desenvolvedor.</div>';
         }
     };
+
+    $avisoPagamentoLogin = "Sistema bloqueado por falta de Pagamento."
 ?>
