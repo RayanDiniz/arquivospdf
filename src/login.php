@@ -4,10 +4,10 @@ session_start();
 
 include('./components/Header-html.php');
 ?>
-<div class="container-fluid bg-light pt-4">
-	<div class="container p-5">
+<div class="container-fluid bg-light">
+	<div class="container">
 	<?php include('./variavel-aviso.php'); ?>
-		<div class="row">
+		<div class="row p-4">
 			<div class="col">
 			<?php echo $AVISO ?>
 			</div>
