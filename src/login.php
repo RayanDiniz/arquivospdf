@@ -17,6 +17,7 @@ include('./variavel-aviso.php');
 				<h4 class="text-secondary">A Nuvem.space ajuda você armazenar com segurança os documentos de sua
 					empresa e com facilidade.
 				</h4>
+				<hr />
 				<h4 class="text-secondary">Assinatura com mercado pago:</h4>
 				<div class="row text-center m-1">
 					<div class="col shadow bg-white rounded p-2 m-2">
