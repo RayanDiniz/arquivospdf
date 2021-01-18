@@ -17,7 +17,7 @@ include('./variavel-aviso.php');
 				<h4 class="text-secondary">A Nuvem.space ajuda você armazenar com segurança os documentos de sua
 					empresa e com facilidade.
 				</h4>
-				<div class="row p-3">
+				<div class="row">
 					<div class="col">
 						<?php echo $AVISO ?>
 					</div>
