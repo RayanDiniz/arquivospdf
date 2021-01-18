@@ -21,8 +21,8 @@ $pdo_verifica->execute();
     };
 
     $AVISO = '
-        <div class="alert alert-danger" role="alert">
-            <strong>BLOQUEADO!</strong> Seu serviço foi bloqueado.
+        <div class="alert alert-info" role="alert">
+            <strong>AVISO!!</strong> Se o serviço estiver bloqueado, escolha uma assinatura.
         </div>
     ';
 

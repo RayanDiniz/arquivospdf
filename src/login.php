@@ -17,12 +17,6 @@ include('./variavel-aviso.php');
 				<h4 class="text-secondary">A Nuvem.space ajuda você armazenar com segurança os documentos de sua
 					empresa e com facilidade.
 				</h4>
-				<div class="row">
-					<div class="col">
-						<?php echo $AVISO ?>
-					</div>
-				</div>
-
 				<h4 class="text-secondary">Assinatura com mercado pago:</h4>
 				<div class="row text-center m-1">
 					<div class="col shadow bg-white rounded p-2 m-2">
@@ -47,8 +41,14 @@ include('./variavel-aviso.php');
 
 			</div>
 			<div class="col shadow p-3 mb-5 bg-white rounded-lg">
-				<?php echo $avisoPagamentoLogin; ?>
 				<form action="../" method="post">
+					<div class="row">
+						<div class="col">
+							<?php echo $AVISO ?>
+						</div>
+					</div>
+					<?php echo $avisoPagamentoLogin; ?>
+
 					<?php if (!empty($_SESSION['login_erro'])) :
 						echo "<div class='alert alert-danger'>" . $_SESSION['login_erro'] . "</div>";
 						$_SESSION['login_erro'] = '';
