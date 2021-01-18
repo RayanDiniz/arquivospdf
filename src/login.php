@@ -7,7 +7,7 @@ include('./variavel-aviso.php');
 ?>
 <div class="container-fluid pt-5">
 	<div class="container pt-5">
-		<div class="row pt-3">
+		<div class="row">
 			<div class="col">
 				<h1 style="color: #00BFFF">
 					<!--<i class="fas fa-angle-double-right fa-2x"></i>-->
