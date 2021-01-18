@@ -25,18 +25,18 @@ include('./variavel-aviso.php');
 						<hr />
 						<small class="text-muted">Plano de assinatura com todas as funcionalidades liberadas.</small>
 						<br />
-						<script src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
-							data-preference-id="2c9380847712e351017715ee49570239">
-						</script>
+						<a name="pro" id="pro" class="btn btn-primary"
+							href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c9380847712e351017715ee49570239"
+							role="button">Pagar</a>
 					</div>
 					<div class="col shadow bg-white rounded p-2 m-2">
 						<strong class="text-success" id="start">Plano Start R$ 200,00</strong>
 						<hr />
 						<small class="text-muted">Plano de assinatura com funcionalidades básicas.</small>
 						<br />
-						<script src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
-							data-preference-id="2c938084770f26b9017715ab2a29038b">
-						</script>
+						<a name="pro" id="pro" class="btn btn-primary"
+							href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c938084770f26b9017715ab2a29038b"
+							role="button">Pagar</a>
 					</div>
 				</div>
 
