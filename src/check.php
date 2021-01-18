@@ -7,5 +7,5 @@ include('./components/Header-html.php');
 <?php
 
 header('location: refresh:5; url=./');
-include('.components/Footer-html.php')
+include('./components/Footer-html.php');
 ?>
