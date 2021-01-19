@@ -28,7 +28,7 @@ include('./components/Header-html.php');
     <div class="row">
         <div class="col text-center p-4">
         
-            <img src="img/user-default.png" class="rounded-circle shadow" width="100" height="100" alt=""/>
+            <img src="img/user-default.jpg" class="rounded-circle shadow" width="100" height="100" alt="usuario"/>
             
             <h5><?php echo $_SESSION['nome_usuario'] ?></h5>
             <small>@<?php echo $_SESSION['usuario'] ?></small>
