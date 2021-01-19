@@ -1,4 +1,7 @@
 ﻿<?php
+// Inicia a sessão
+session_start();
+
 include('./functions/login/config.php');
 include('./functions/login/verifica_login.php');
 include('./functions/login/redirect.php');
