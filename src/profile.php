@@ -40,15 +40,18 @@ include('./components/Header-html.php');
                 <li>Administrador do Sistema</li>
                 <?php    }; ?>
             </ul>
+            <hr />
         </div>
+
         <div class="col-12">
-            <div class="row mt-2">
-                <div class="col">
-                    <div class="alert alert-danger" role="alert">
-                        <strong>BLOQUEADO!</strong> Seu serviço foi bloqueado.
-                    </div>
-                </div>
+            <h4>Aplicativos Contratados:</h4>
+            <div class="alert alert-danger" role="alert">
+                <strong>BLOQUEADO!</strong> Seu serviço foi bloqueado.
             </div>
+            <hr />
+        </div>
+
+        <div class="col-12">
             <h4 class="text-secondary">Assine agora Pacotes e contrate varios serviços:</h4>
             <div class="row text-center m-1">
                 <div class="col shadow bg-white rounded p-2 m-2">
@@ -81,6 +84,14 @@ include('./components/Header-html.php');
                         href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c9380847712e351017715ee49570239"
                         role="button">Contratar</a>
                 </div>
+            </div>
+            <hr />
+        </div>
+
+        
+        <div class="row text-center text-muted mb-0 mt-3">
+            <div class="col">
+                <p>Desenvolvido por RayanDiniz &copy;</p>
             </div>
         </div>
     </div>
