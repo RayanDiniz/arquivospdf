@@ -43,44 +43,40 @@ include('./components/Header-html.php');
         </div>
 
         <div class="col-12">
-            <h4>Aplicativos Contratados:</h4>
-            <div class="alert alert-danger" role="alert">
-                <strong>BLOQUEADO!</strong> Seu serviço foi bloqueado.
+            <h4 class="text-secondary">Aplicativos Contratados:</h4>
+            <?php echo $AVISO ?>
+            <div class="col shadow bg-white rounded p-2 m-2">
+                <strong class="text-success" id="pro">Plano Pro R$ 400,00</strong>
+                <hr />
+                <small class="text-muted">Plano de assinatura com todas as funcionalidades liberadas.</small>
+                <br />
+                <a name="pro" id="pro" class="btn btn-primary"
+                    href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c9380847712e351017715ee49570239"
+                    role="button">Pagar</a>
+            </div>
+            <div class="col shadow bg-white rounded p-2 m-2">
+                <strong class="text-success" id="start">Plano Start R$ 200,00</strong>
+                <hr />
+                <small class="text-muted">Plano de assinatura com funcionalidades básicas.</small>
+                <br />
+                <a name="pro" id="pro" class="btn btn-primary"
+                    href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c938084770f26b9017715ab2a29038b"
+                    role="button">Pagar</a>
             </div>
             <hr />
         </div>
 
         <div class="col-12">
-            <h4 class="text-secondary">Assine agora Pacotes e contrate varios serviços:</h4>
+            <h4 class="text-secondary">Assine agora planos completos:</h4>
             <div class="row text-center m-1">
                 <div class="col shadow bg-white rounded p-2 m-2">
-                    <strong class="text-secondary" id="pro">Plano Master</strong>
+                    <strong class="text-secondary" id="pro">Planos Completos</strong>
                     <hr />
-                    <strong class="text-success" id="pro">5.000,00 / mês</strong><br/>
-                    <small class="text-muted">Plano de assinatura com todas as aplicações que precisar.</small>
+                    <strong class="text-success" id="pro">valor / mês</strong><br/>
+                    <small class="text-muted">Descrição.</small>
                     <br />
                     <a name="pro" id="pro" class="btn btn-primary"
-                        href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c9380847712e351017715ee49570239"
-                        role="button">Contratar</a>
-                </div>
-                <div class="col shadow bg-white rounded p-2 m-2">
-                    <strong class="text-secondary" id="start">Plano Pro</strong>
-                    <hr />
-                    <strong class="text-success" id="pro">2.500,00 / mês</strong><br/>
-                    <small class="text-muted">Plano de assinatura com 8 aplicações disponíveis.</small>
-                    <br />
-                    <a name="pro" id="pro" class="btn btn-primary"
-                        href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c9380847712e351017715ee49570239"
-                        role="button">Contratar</a>
-                </div>
-                <div class="col shadow bg-white rounded p-2 m-2">
-                    <strong class="text-secondary" id="pro">Plano Start</strong>
-                    <hr />
-                    <strong class="text-success" id="pro">1.500,00 / mês</strong><br/>
-                    <small class="text-muted">Plano de assinatura com 4 aplicações disponíveis.</small>
-                    <br />
-                    <a name="pro" id="pro" class="btn btn-primary"
-                        href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c9380847712e351017715ee49570239"
+                        href="#"
                         role="button">Contratar</a>
                 </div>
             </div>
@@ -89,8 +85,7 @@ include('./components/Header-html.php');
 
         <div class="col-12 text-center text-muted mb-0 mt-3">
             <p>Desenvolvido por RayanDiniz &copy;</p>
-        </div>
-        
+        </div>   
     </div>
 </div>   
 <?php include('./components/Footer-html.php'); ?>
