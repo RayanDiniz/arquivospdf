@@ -5,9 +5,11 @@ include('./functions/login/redirect.php');
 include('./components/Header-html.php');
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
-    <a class="navbar-brand img-circle shawdom" href="#">
-        <img src="img/company-default.png" alt="Empresa" width="30" height="30" class="d-inline-block align-top" />
-        Nome da Empresa
+    <a class="navbar-brand" href="profile.php">
+        <span class=" rounded-circle shawdom border border-success">
+            <img src="img/company-default.png" alt="Empresa" width="30" height="30" class="d-inline-block align-top" />
+            Nome da Empresa
+        </span>
     </a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -18,13 +20,12 @@ include('./components/Header-html.php');
 
         </ul>
         <a class="navbar-nav btn btn-primary" href="functions/login/sair.php" role="button">
-            <i class="fas fa-sign-out-alt">Sair</i>
-            
+            <i class="fas text-danger fa-sign-out-alt"> Sair</i>
         </a>
     </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid pt-5">
     <div class="row">
         <div class="col text-center p-4">
         
