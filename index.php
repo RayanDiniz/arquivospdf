@@ -10,7 +10,7 @@ include('./src/functions/variavel-aviso.php');
 <div class="container-fluid pt-5">
     <div class="container pt-5">
         <div class="row">
-            <div class="col-6 text-secondary align-baseline">
+            <div class="col m-5 text-secondary align-baseline">
                 <h1 style="color: #00BFFF">
                     <!--<i class="fas fa-angle-double-right fa-2x"></i>-->
                     <i class="fa fa-cloud fa-1x" aria-hidden="true"></i>
@@ -23,7 +23,7 @@ include('./src/functions/variavel-aviso.php');
                 <a class="btn btn-success btn-lg btn-block" href="cadastro.html" role="button">Cadastrar Empresa</a>
             </div>
 
-            <div class="col shadow p-3 mb-5 bg-white rounded-lg">
+            <div class="col shadow p-3 m-5 bg-white rounded-lg">
                 <form action=".src/profile.php" method="post">
 					<?php if (!empty($_SESSION['login_erro'])) :
 						echo "<div class='alert alert-danger'>" . $_SESSION['login_erro'] . "</div>";
