@@ -4,10 +4,10 @@ include('./functions/login/verifica_login.php');
 include('./functions/login/redirect.php');
 include('./components/Header-html.php');
 ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
     <a class="navbar-brand img-circle shawdom" href="#">
-        <img src="empresa.png" alt="Empresa" width="30" height="30" class="d-inline-block align-top" />
-        Arcor
+        <img src="./img/company-default.jpg" alt="Empresa" width="30" height="30" class="d-inline-block align-top" />
+        Nome da Empresa
     </a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -88,12 +88,10 @@ include('./components/Header-html.php');
             <hr />
         </div>
 
-        
-        <div class="row text-center text-muted mb-0 mt-3">
-            <div class="col">
-                <p>Desenvolvido por RayanDiniz &copy;</p>
-            </div>
+        <div class="col-12 text-center text-muted mb-0 mt-3">
+            <p>Desenvolvido por RayanDiniz &copy;</p>
         </div>
+        
     </div>
 </div>   
 <?php include('./components/Footer-html.php'); ?>
