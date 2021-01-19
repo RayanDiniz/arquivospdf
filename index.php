@@ -1,172 +1,73 @@
 <?php
-include('src/login/config.php');
-//include('src/login/local.php');
-include('src/login/verifica_login.php');
-include('src/login/redirect.php');
+// Inicia a sessão
+session_start();
+
+include('./src/components/Header-html.php');
+include('./src/functions/variavel-aviso.php');
 ?>
-<!doctype html>
-<html lang="pt-br">
+<div class="container-fluid pt-5">
+    <div class="container pt-2">
+        <div class="row">
+            <div class="col text-secondary align-baseline">
+                <h1 style="color: #00BFFF">
+                    <!--<i class="fas fa-angle-double-right fa-2x"></i>-->
+                    <i class="fa fa-cloud fa-1x" aria-hidden="true"></i>
+                    Nuvem
+                </h1>
+                <h4>A Nuvem.space ajuda sua empresa com aplicações que facilitam seu dia a dia de trabalho.
+                </h4>
+                <hr />
+                <p>Faça o cadastro da sua empresa gratuitamente e assine apenas as aplicações que você precisar.</p>
+                <a class="btn btn-success btn-lg btn-block" href="cadastro.html" role="button">Cadastrar Empresa</a>
+            </div>
 
-<head>
-    <title>Nuvem</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Sistema de armazenamento de arquivos.">
-    <meta name="author" content="Rayan Diniz">
+            <div class="col shadow p-3 mb-5 bg-white rounded-lg">
+                <form action="perfil.html" method="post">
+					<?php if (!empty($_SESSION['login_erro'])) :
+						echo "<div class='alert alert-danger'>" . $_SESSION['login_erro'] . "</div>";
+						$_SESSION['login_erro'] = '';
+					endif; ?>
+                    <div class=" input-group input-group-lg">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-building" aria-hidden="true"></i></span>
+                        </div>
+                        <select class="form-control form-control-lg" name="empresa" id="empresa" required>
+                            <option selected>Selecione a sua Empresa</option>
+                            <option value="1">exemplo 2</option>
+                            <option value="1">exemplo 3</option>
+                        </select>
+                    </div>
 
-    <link rel="stylesheet" href="src/style.css">
+                    <div class=" input-group input-group-lg mt-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="text" name="usuario" id="" class="form-control" placeholder="Nome do Usuário"
+                            aria-describedby="helpId" required />
+                    </div>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-</head>
+                    <div class=" input-group input-group-lg mt-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="password" name="senha" id="" class="form-control"
+                            placeholder="Senha do Usuário" aria-describedby="helpId" required />
+                    </div>
 
-<body>
-
-    <div class="d-flex" id="wrapper">
-
-        <!-- Sidebar -->
-        <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading"> <?php echo $_SESSION['nome_usuario'] ?> </div>
-            <div class="list-group list-group-flush">
-                <a href="." class="list-group-item list-group-item-action bg-light">
-                    <i class="fas fa-home" aria-hidden="true"></i>
-                    <span>Inicio</span>
-                </a>
-
-                <a href="src/cria-clientes/" target="Post" class="list-group-item list-group-item-action bg-light">
-                    <i class="fas fa-users" aria-hidden="true"></i>
-                    <span>Clientes</span>
-                </a>
-
-                <?php if ($_SESSION['master'] === 'adm') { ?>
-                    <a href="src/cria-usuarios/" target="Post" class="list-group-item list-group-item-action bg-light">
-                        <i class="fas fa-user-tie" aria-hidden="true"></i>
-                        <span>Usuários do Sistema</span>
-                    </a>
-                    <a href="src/pagamentos/" target="Post" class="list-group-item list-group-item-action bg-light">
-                        <i class="fas fa-handshake" aria-hidden="true"></i>
-                        <span>Pagamentos</span>
-                    </a>
-                <?php    }; ?>
-
-                <a href="src/upload" target="Post" class="list-group-item list-group-item-action bg-light">
-                    <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                    <span>Enviar Arquivo</span>
-                </a>
-
-                <a href="https://www.ilovepdf.com/pt/word_para_pdf" target="Post" class="list-group-item list-group-item-action bg-light">
-                    <i class="fas fa-sync" aria-hidden="true"></i>
-                    <span>Converter Arquivo</span>
-                </a>
-
-                <a href="src/login/sair.php" class="list-group-item list-group-item-action bg-light">
-                    <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
-                    <span>Sair</span>
-                </a>
+                    <button type="sumit" class="btn btn-primary btn-lg btn-block mt-3">Entrar</button>
+                    <hr />
+                    <small id="helpId" class="text-muted">Selecione sua empresa e digite o nome de seu usuário e a senha para logar na
+                        nuvem.</small>
+                    <small id="helpId" class="text-muted">Caso tenha esquecido sua senha entre em contato com o Administrativo ou com o <a
+                            href="https://linkwhats.app/8a025b">Desenvolvedor</a></small>
+                </form>
             </div>
         </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <a href="#" id="menu-toggle">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <ul class="navbar-nav ml-auto">
-
-                        <li class="nav-item">
-                            Busca:&nbsp;&nbsp;
-                        </li>
-                        <li class="nav-item">
-
-                            <form name="frmBusca" method="post" target="Post" action="src/pesquisa/cliente.php?a=buscar">
-                                <div class="input-group">
-                                    <input name="cliente" id="txt_consulta" placeholder="pelo nome do cliente" type="text" class="form-control" required>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="submit">
-                                            <i class="fas fa-search" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </li>
-                        <li class="nav-item">
-                            &nbsp;&nbsp;ou&nbsp;&nbsp;
-                        </li>
-                        <li class="nav-item">
-
-                            <form name="frmBusca" method="post" target="Post" action="src/pesquisa/cpf.php?a=buscar">
-                                <div class="input-group">
-                                    <input name="cpf" id="txt_consulta" placeholder="pelo CPF do cliente" type="text" oninput="mascara(this)" class="form-control" required>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="submit">
-                                            <i class="fas fa-search" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </li>
-                        <li class="nav-item">
-                            &nbsp;&nbsp;ou&nbsp;&nbsp;
-                        </li>
-                        <li class="nav-item">
-
-                            <form name="frmBusca" method="post" target="Post" action="src/pesquisa/arquivo.php?a=buscar">
-                                <div class="input-group">
-                                    <input name="arquivo" id="txt_consulta" placeholder="pelo nome do arquivo" type="text" class="form-control" required>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-danger" type="submit">
-                                            <i class="fas fa-search" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="container-fluid" style="height:80%;">
-                <!--<h3 class="mt-4"><b><php echo $_SESSION['nome_usuario'] ?></b></h3>-->
-
-                <iframe name="Post" src="info.php" width="100%" height="100%" frameborder=0 scrolling=yes>
-
-                </iframe>
-            </div>
-            <div class=" text-center text-muted" style="margin-bottom:0">
+        <div class="row text-center text-muted mb-0 mt-3">
+            <div class="col">
                 <p>Desenvolvido por RayanDiniz &copy;</p>
             </div>
         </div>
     </div>
-    <!-- /#page-content-wrapper -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="http://nuvem.space/src/app.js"></script>
-    <!-- Menu Toggle Script -->
-    <script>
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
-</body>
-
-</html>
+</div>
+<?php include('./src/components/Footer-html.php'); ?>

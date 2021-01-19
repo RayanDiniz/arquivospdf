@@ -14,11 +14,7 @@
   <div class="container">
     <div class="jumbotron">
       <h3 class="display-5">Bem-Vindo(a)</h3>
-      <p class="lead">ao sistema de armazenamento de arquivos pdf na nuvem</p>
-      <div class="alert alert-warning" role="alert">
-        <strong>Atenção!</strong> O pagamento de Dezembro vence em 11/01/2021. Você pode baixar o boleto abaixo:
-      </div>
-      <a href="boleto.pdf" target="blank">Baixar Boleto</a>
+      <p class="lead">ao sistema de armazenamento de arquivos na nuvem</p>
       <hr class="my-2">
       <p>Caso esteja com problemas envie um e-mail e relate:</p>
       <p class="lead">

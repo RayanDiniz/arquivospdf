@@ -12,3 +12,9 @@ function mascara(i){
     if (v.length == 11) i.value += "-";
  
  }
+
+ //Menu Toggle Script
+ $("#menu-toggle").click(function(e) {
+   e.preventDefault();
+   $("#wrapper").toggleClass("toggled");
+});
