@@ -3,6 +3,7 @@ include('./functions/login/config.php');
 include('./functions/login/verifica_login.php');
 include('./functions/login/redirect.php');
 include('./components/Header-html.php');
+include('./functions/variavel-aviso.php');
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
     <a class="navbar-brand" href="profile.php">
@@ -45,23 +46,25 @@ include('./components/Header-html.php');
         <div class="col-12">
             <h4 class="text-secondary">Aplicativos Contratados:</h4>
             <?php echo $AVISO ?>
-            <div class="col shadow bg-white rounded p-2 m-2">
-                <strong class="text-success" id="pro">Serviço de Armazenamento de Arquivos - Pro R$ 400,00</strong>
-                <hr />
-                <small class="text-muted">50GB de Espaço.</small>
-                <br />
-                <a name="pro" id="pro" class="btn btn-primary"
-                    href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c9380847712e351017715ee49570239"
-                    role="button">Pagar</a>
-            </div>
-            <div class="col shadow bg-white rounded p-2 m-2">
-                <strong class="text-success" id="start">Serviço de Armazenamento de Arquivos - Start R$ 200,00</strong>
-                <hr />
-                <small class="text-muted">25GB de Espaço.</small>
-                <br />
-                <a name="pro" id="pro" class="btn btn-primary"
-                    href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c938084770f26b9017715ab2a29038b"
-                    role="button">Pagar</a>
+            <div class="row text-center m-1">
+                <div class="col shadow bg-white rounded p-2 m-2">
+                    <strong class="text-success" id="pro">Serviço de Armazenamento de Arquivos - Pro R$ 400,00</strong>
+                    <hr />
+                    <small class="text-muted">50GB de Espaço.</small>
+                    <br />
+                    <a name="pro" id="pro" class="btn btn-primary"
+                        href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c9380847712e351017715ee49570239"
+                        role="button">Pagar</a>
+                </div>
+                <div class="col shadow bg-white rounded p-2 m-2">
+                    <strong class="text-success" id="start">Serviço de Armazenamento de Arquivos - Start R$ 200,00</strong>
+                    <hr />
+                    <small class="text-muted">25GB de Espaço.</small>
+                    <br />
+                    <a name="pro" id="pro" class="btn btn-primary"
+                        href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c938084770f26b9017715ab2a29038b"
+                        role="button">Pagar</a>
+                </div>
             </div>
             <hr />
         </div>
