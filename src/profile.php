@@ -6,7 +6,7 @@ include('./components/Header-html.php');
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
     <a class="navbar-brand img-circle shawdom" href="#">
-        <img src="./img/company-default.jpg" alt="Empresa" width="30" height="30" class="d-inline-block align-top" />
+        <img src="img/company-default.png" alt="Empresa" width="30" height="30" class="d-inline-block align-top" />
         Nome da Empresa
     </a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -17,9 +17,9 @@ include('./components/Header-html.php');
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
         </ul>
-        <a name="" id="" class="navbar-nav btn btn-primary" href="functions/login/sair.php" role="button">
-            <i class="fas fa-sign-out-alt"></i>
-            Sair
+        <a class="navbar-nav btn btn-primary" href="functions/login/sair.php" role="button">
+            <i class="fas fa-sign-out-alt">Sair</i>
+            
         </a>
     </div>
 </nav>
