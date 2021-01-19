@@ -24,7 +24,7 @@ include('./src/functions/variavel-aviso.php');
             </div>
 
             <div class="col shadow p-3 m-5 bg-white rounded-lg">
-                <form action=".src/profile.php" method="post">
+                <form action="./src/profile.php" method="post">
 					<?php if (!empty($_SESSION['login_erro'])) :
 						echo "<div class='alert alert-danger'>" . $_SESSION['login_erro'] . "</div>";
 						$_SESSION['login_erro'] = '';
