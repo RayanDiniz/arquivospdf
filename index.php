@@ -2,6 +2,7 @@
 // Inicia a sessão
 session_start();
 include('./src/functions/login/config.php');
+include('./src/functions/login/verifica_login.php');
 include('./src/components/Header-html.php');
 include('./src/functions/variavel-aviso.php');
 ?>
