@@ -1,17 +1,11 @@
 ﻿<?php
-// Inicia a sessão
-session_start();
 
 include('./functions/login/config.php');
 include('./functions/login/verifica_login.php');
 include('./functions/login/redirect.php');
 include('./components/Header-html.php');
 ?>
-        
-        
-           
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand img-circle shawdom" href="#">
             <img src="empresa.png" alt="Empresa" width="30" height="30" class="d-inline-block align-top" />
             Arcor
@@ -24,7 +18,7 @@ include('./components/Header-html.php');
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
             </ul>
-            <a name="" id="" class="navbar-nav btn btn-primary" href="#" role="button">
+            <a name="" id="" class="navbar-nav btn btn-primary" href="functions/login/sair.php" role="button">
                 <i class="fas fa-sign-out-alt"></i>
                 Sair
             </a>
