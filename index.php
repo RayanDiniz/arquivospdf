@@ -1,4 +1,7 @@
 <?php
+// Inicia a sessão
+session_start();
+
 include('./src/components/Header-html.php');
 include('./src/functions/variavel-aviso.php');
 ?>
