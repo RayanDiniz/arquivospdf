@@ -6,8 +6,8 @@ include('./components/Header-html.php');
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
     <a class="navbar-brand" href="profile.php">
-        <span class=" rounded-circle shawdom border border-success">
-            <img src="img/company-default.png" alt="Empresa" width="30" height="30" class="d-inline-block align-top" />
+        <span class="border rounded-circle shawdom border-success">
+            <img src="img/company-default.png" alt="Empresa" width="30" height="30" class="d-inline-block align-top rounded-circle" />
         </span>
             Nome da Empresa
     </a>
