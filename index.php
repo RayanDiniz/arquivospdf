@@ -8,7 +8,7 @@ include('./src/functions/variavel-aviso.php');
 ?>
 
 <div class="container-fluid pt-5">
-    <div class="container pt-2">
+    <div class="container pt-5">
         <div class="row">
             <div class="col text-secondary align-baseline">
                 <h1 style="color: #00BFFF">
