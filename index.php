@@ -1,7 +1,7 @@
 <?php
 // Inicia a sessão
 session_start();
-
+include('./src/functions/login/config.php');
 include('./src/components/Header-html.php');
 include('./src/functions/variavel-aviso.php');
 ?>
@@ -71,4 +71,5 @@ include('./src/functions/variavel-aviso.php');
         </div>
     </div>
 </div>
-<?php include('./src/components/Footer-html.php'); ?>
+<?php
+include('./src/components/Footer-html.php'); ?>
