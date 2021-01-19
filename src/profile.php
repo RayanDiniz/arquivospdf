@@ -8,8 +8,8 @@ include('./components/Header-html.php');
     <a class="navbar-brand" href="profile.php">
         <span class=" rounded-circle shawdom border border-success">
             <img src="img/company-default.png" alt="Empresa" width="30" height="30" class="d-inline-block align-top" />
-            Nome da Empresa
         </span>
+            Nome da Empresa
     </a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
