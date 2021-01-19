@@ -10,7 +10,7 @@ include('./src/functions/variavel-aviso.php');
 <div class="container-fluid pt-5">
     <div class="container pt-5">
         <div class="row">
-            <div class="col text-secondary align-baseline">
+            <div class="col-6 text-secondary align-baseline">
                 <h1 style="color: #00BFFF">
                     <!--<i class="fas fa-angle-double-right fa-2x"></i>-->
                     <i class="fa fa-cloud fa-1x" aria-hidden="true"></i>
