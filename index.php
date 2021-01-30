@@ -14,7 +14,7 @@ include('./src/functions/variavel-aviso.php');
                 <h1 style="color: #00BFFF">
                     <!--<i class="fas fa-angle-double-right fa-2x"></i>-->
                     <i class="fa fa-cloud fa-1x" aria-hidden="true"></i>
-                    Nuvem
+                    Drive
                 </h1>
                 <h4>A Nuvem.space ajuda sua empresa com aplicações que facilitam seu dia a dia de trabalho.
                 </h4>

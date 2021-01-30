@@ -3,92 +3,133 @@ include('./functions/login/config.php');
 include('./functions/login/verifica_login.php');
 include('./functions/login/redirect.php');
 include('./components/Header-html.php');
-include('./functions/variavel-aviso.php');
 ?>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
-    <a class="navbar-brand" href="profile.php">
-        <img src="img/company-default.png" alt="Empresa" width="30" height="30" class="d-inline-block align-top rounded-circle shawdom border border-success" />
-        Nome da Empresa
-    </a>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+<div class="d-flex" id="wrapper">
 
-        </ul>
-        <a class="navbar-nav btn btn-primary" href="functions/login/sair.php" role="button">
-            <i class="fas fa-sign-out-alt"> Sair</i>
-        </a>
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading"> <?php echo $_SESSION['nome_usuario'] ?> </div>
+        <div class="list-group list-group-flush">
+            <a href="." class="list-group-item list-group-item-action bg-light">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <span>Inicio</span>
+            </a>
+
+            <a href="src/cria-clientes/" target="Post" class="list-group-item list-group-item-action bg-light">
+                <i class="fas fa-users" aria-hidden="true"></i>
+                <span>Clientes</span>
+            </a>
+
+            <?php if ($_SESSION['master'] === 'adm') { ?>
+                <a href="src/cria-usuarios/" target="Post" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-user-tie" aria-hidden="true"></i>
+                    <span>Usuários do Sistema</span>
+                </a>
+                <a href="src/pagamentos/" target="Post" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-handshake" aria-hidden="true"></i>
+                    <span>Pagamentos</span>
+                </a>
+            <?php    }; ?>
+
+            <a href="src/upload" target="Post" class="list-group-item list-group-item-action bg-light">
+                <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                <span>Enviar Arquivo</span>
+            </a>
+
+            <a href="https://www.ilovepdf.com/pt/word_para_pdf" target="Post" class="list-group-item list-group-item-action bg-light">
+                <i class="fas fa-sync" aria-hidden="true"></i>
+                <span>Converter Arquivo</span>
+            </a>
+
+            <a href="src/login/sair.php" class="list-group-item list-group-item-action bg-light">
+                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                <span>Sair</span>
+            </a>
+        </div>
     </div>
-</nav>
+    <!-- /#sidebar-wrapper -->
 
-<div class="container-fluid pt-5">
-    <div class="row">
-        <div class="col text-center p-4">
-        
-            <img src="img/user-default.jpg" class="rounded-circle shadow" width="100" height="100" alt="usuario"/>
-            
-            <h5><?php echo $_SESSION['nome_usuario'] ?></h5>
-            <small>@<?php echo $_SESSION['usuario'] ?></small>
-            <hr />
-            <ul class="list-unstyled">
-                <li>Identificação: <?php echo $_SESSION['user_id'] ?>.</li>
-                <li>Cargo: Administrativo.</li>
-                <?php if ($_SESSION['master'] === 'adm') { ?>
-                <li>Administrador do Sistema</li>
-                <?php    }; ?>
-            </ul>
-            <hr />
-        </div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
 
-        <div class="col-12">
-            <h4 class="text-secondary">Aplicativos Contratados:</h4>
-            <?php echo $AVISO ?>
-            <div class="row text-center m-1">
-                <div class="col shadow bg-white rounded p-2 m-2">
-                    <strong class="text-success" id="pro">Serviço de Armazenamento de Arquivos - Pro R$ 400,00</strong>
-                    <hr />
-                    <small class="text-muted">50GB de Espaço.</small>
-                    <br />
-                    <a name="pro" id="pro" class="btn btn-primary"
-                        href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c9380847712e351017715ee49570239"
-                        role="button">Pagar</a>
-                </div>
-                <div class="col shadow bg-white rounded p-2 m-2">
-                    <strong class="text-success" id="start">Serviço de Armazenamento de Arquivos - Start R$ 200,00</strong>
-                    <hr />
-                    <small class="text-muted">25GB de Espaço.</small>
-                    <br />
-                    <a name="pro" id="pro" class="btn btn-primary"
-                        href="https://www.mercadopago.com/mlb/debits/new?preapproval_plan_id=2c938084770f26b9017715ab2a29038b"
-                        role="button">Pagar</a>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <a href="#" id="menu-toggle">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        Busca:&nbsp;&nbsp;
+                    </li>
+                    <li class="nav-item">
+
+                        <form name="frmBusca" method="post" target="Post" action="src/pesquisa/cliente.php?a=buscar">
+                            <div class="input-group">
+                                <input name="cliente" id="txt_consulta" placeholder="pelo nome do cliente" type="text" class="form-control" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fas fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </li>
+                    <li class="nav-item">
+                        &nbsp;&nbsp;ou&nbsp;&nbsp;
+                    </li>
+                    <li class="nav-item">
+
+                        <form name="frmBusca" method="post" target="Post" action="src/pesquisa/cpf.php?a=buscar">
+                            <div class="input-group">
+                                <input name="cpf" id="txt_consulta" placeholder="pelo CPF do cliente" type="text" oninput="mascara(this)" class="form-control" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="submit">
+                                        <i class="fas fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </li>
+                    <li class="nav-item">
+                        &nbsp;&nbsp;ou&nbsp;&nbsp;
+                    </li>
+                    <li class="nav-item">
+
+                        <form name="frmBusca" method="post" target="Post" action="src/pesquisa/arquivo.php?a=buscar">
+                            <div class="input-group">
+                                <input name="arquivo" id="txt_consulta" placeholder="pelo nome do arquivo" type="text" class="form-control" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-danger" type="submit">
+                                        <i class="fas fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </li>
+                </ul>
             </div>
-            <hr />
-        </div>
+        </nav>
 
-        <div class="col-12">
-            <h4 class="text-secondary">Assine agora planos completos:</h4>
-            <div class="row text-center m-1">
-                <div class="col shadow bg-white rounded p-2 m-2">
-                    <strong class="text-secondary" id="pro">Planos Completos</strong>
-                    <hr />
-                    <strong class="text-success" id="pro">valor / mês</strong><br/>
-                    <small class="text-muted">Planos em Desenvolvimento.</small>
-                    <br />
-                    <a name="pro" id="pro" class="btn btn-primary"
-                        href="#"
-                        role="button">Contratar</a>
-                </div>
-            </div>
-            <hr />
-        </div>
+        <div class="container-fluid" style="height:80%;">
+            <!--<h3 class="mt-4"><b><php echo $_SESSION['nome_usuario'] ?></b></h3>-->
 
-        <div class="col-12 text-center text-muted mb-0 mt-3">
+            <iframe name="Post" src="info.php" width="100%" height="100%" frameborder=0 scrolling=yes>
+
+            </iframe>
+        </div>
+        <div class=" text-center text-muted" style="margin-bottom:0">
             <p>Desenvolvido por RayanDiniz &copy;</p>
-        </div>   
+        </div>
     </div>
-</div>   
+</div>
+    <!-- /#page-content-wrapper -->
 <?php include('./components/Footer-html.php'); ?>
