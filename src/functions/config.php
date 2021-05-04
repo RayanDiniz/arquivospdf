@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Este arquivo contém as configurações necessárias para
  * o sistema de login funcionar corretamente.
