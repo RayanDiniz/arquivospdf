@@ -1,5 +1,5 @@
 <?php
-include('./login/config.php');
+include('config.php');
 
 $pdo_verifica = $conexao_pdo->prepare('SELECT * FROM pagamentos WHERE status = 0 AND boleto != "null"');
 $pdo_verifica->execute();
