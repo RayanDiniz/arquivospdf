@@ -1,4 +1,4 @@
-<?php
+<?php 
 include('src/login/config.php');
 //include('src/login/local.php');
 include('src/login/verifica_login.php');
